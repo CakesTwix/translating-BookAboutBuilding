@@ -1,0 +1,1215 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>About Android Building</title>
+        <meta name="robots" content="noindex" />
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/language-picker.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="./theme/css/language-picker.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Введение.html">Введение</a></li><li class="chapter-item expanded "><a href="Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html"><strong aria-hidden="true">1.</strong> Глава 1 Начало начал</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html"><strong aria-hidden="true">1.1.</strong> Параграф 1 выбор подходящей системы</a></li><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 2 установка системы и настройка её среды.html"><strong aria-hidden="true">1.2.</strong> Параграф 2 установка системы и настройка её среды</a></li><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 3 качаем исходники прошивки.html"><strong aria-hidden="true">1.3.</strong> Параграф 3 качаем исходники прошивки</a></li><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 4 исходники устройства.html"><strong aria-hidden="true">1.4.</strong> Параграф 4 исходники устройства</a></li><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 5 инициализация и сборка.html"><strong aria-hidden="true">1.5.</strong> Параграф 5 инициализация и сборка</a></li><li class="chapter-item "><a href="Глава 1 Начало начал/Параграф 6 в завершение.html"><strong aria-hidden="true">1.6.</strong> Параграф 6 в завершение</a></li></ol></li><li class="chapter-item expanded "><a href="Глава 2 git, с чем его едят и зачем он/Введение.html"><strong aria-hidden="true">2.</strong> Глава 2 git, с чем его едят и зачем он</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Глава 2 git, с чем его едят и зачем он/Параграф 1 Создание аккаунта на GitHub и настройка git под свой аккаунт.html"><strong aria-hidden="true">2.1.</strong> Параграф 1 Создание аккаунта на GitHub и настройка git под свой аккаунт</a></li><li class="chapter-item "><a href="Глава 2 git, с чем его едят и зачем он/Параграф 2 Ходовые команды git'а.html"><strong aria-hidden="true">2.2.</strong> Параграф 2 Ходовые команды git'а</a></li></ol></li><li class="chapter-item expanded "><a href="Глава 3 изучение исходников устройства/Введение.html"><strong aria-hidden="true">3.</strong> Глава 3 изучение исходников устройства</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Глава 3 изучение исходников устройства/Параграф 1 что есть что и для чего.html"><strong aria-hidden="true">3.1.</strong> Параграф 1 что есть что и для чего</a></li><li class="chapter-item "><a href="Глава 3 изучение исходников устройства/Параграф 2 что такое дерево и сколько их должно быть.html"><strong aria-hidden="true">3.2.</strong> Параграф 2 что такое дерево и сколько их должно быть</a></li><li class="chapter-item "><a href="Глава 3 изучение исходников устройства/Параграф 3 Что такое vendor и почему он имеет чужие библиотеки.html"><strong aria-hidden="true">3.3.</strong> Параграф 3 Что такое vendor и почему он имеет чужие библиотеки</a></li><li class="chapter-item "><a href="Глава 3 изучение исходников устройства/Параграф 4 Что такое ядро.html"><strong aria-hidden="true">3.4.</strong> Параграф 4 Что такое ядро</a></li><li class="chapter-item "><a href="Глава 3 изучение исходников устройства/Параграф 5 Адаптация исходников устройства.html"><strong aria-hidden="true">3.5.</strong> Параграф 5 Адаптация исходников устройства</a></li></ol></li><li class="chapter-item expanded "><a href="Глава 4 Обновление исходников самостоятельно/Введение.html"><strong aria-hidden="true">4.</strong> Глава 4 Обновление исходников самостоятельно</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Глава 4 Обновление исходников самостоятельно/Параграф 1 Дампы, vendor и proprietary-files.txt.html"><strong aria-hidden="true">4.1.</strong> Параграф 1 Дампы, vendor и proprietary-files.txt</a></li><li class="chapter-item "><a href="Глава 4 Обновление исходников самостоятельно/Параграф 5 Обновление и сборка ядра.html"><strong aria-hidden="true">4.2.</strong> Параграф 5 Обновление и сборка ядра</a></li></ol></li><li class="chapter-item expanded "><a href="Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд).html"><strong aria-hidden="true">5.</strong> Глава 5 дополнительный материал, который не вошел в основную часть</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд).html"><strong aria-hidden="true">5.1.</strong> Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд)</a></li><li class="chapter-item "><a href="Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 5 список полезных утилит и приложений.html"><strong aria-hidden="true">5.2.</strong> Параграф 5 список полезных утилит и приложений</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">About Android Building</h1>
+
+                    <div class="right-buttons">
+                        <button id="language-toggle" class="icon-button" type="button"
+                                title="Change language" aria-label="Change language"
+                                aria-haspopup="true" aria-expanded="false"
+                                aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="ru">Russian</a>
+                          </button></li>
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="uk">Ukrainian</a>
+                          </button></li>
+                        </ul>
+
+                        <script>
+                          let langToggle = document.getElementById("language-toggle");
+                          let langList = document.getElementById("language-list");
+                          langToggle.addEventListener("click", (event) => {
+                              langList.style.display = langList.style.display == "block" ? "none" : "block";
+                          });
+                          let selectedLang = document.getElementById("ru");
+                          selectedLang.parentNode.classList.add("theme-selected");
+                          // The path to the root, taking the current
+                          // language into account.
+                          let full_path_to_root = "";
+                          console.log("ru")
+                          // The page path (mdbook only gives us
+                          // access to the path to the Markdown file).
+                          let path = "print.md".replace(/\.md$/, ".html");
+                          for (let lang of langList.querySelectorAll("a")) {
+                              if (lang.id == "ru") {
+                                  lang.href = `${full_path_to_root}${path}`;
+                              } else {
+                                  lang.href = `${full_path_to_root}${lang.id}/${path}`;
+                              }
+                          }
+                        </script>
+
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Roker2/BookAboutBuilding" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p align="center">
+  <img src="images/icon.png" width="128"/>
+  <p align="center"><b>BookAboutBuilding</p>
+</p>
+<h2 id="Введение"><a class="header" href="#Введение">Введение</a></h2>
+<p>Книга представляет собой исчерпывающее руководство по сборке операционной системы Android из исходного кода на Linux и разбору ее работы на низком уровне. Написанная в доступном и понятном стиле, она предоставляет читателям уникальную возможность углубиться во внутреннюю механику Android и получить полное представление о том, как функционирует эта популярная мобильная платформа.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-выбор-подходящей-системы"><a class="header" href="#Параграф-1-выбор-подходящей-системы">Параграф 1: выбор подходящей системы</a></h1>
+<p>Людям, которые знают операционные системы Linux, этот параграф можно пропустить, так как, думаю, вы и без меня все знаете.</p>
+<h3 id="Что-такое-linux-и-с-чем-его-едят"><a class="header" href="#Что-такое-linux-и-с-чем-его-едят">Что такое Linux, и с чем его едят</a></h3>
+<p>Linux - это ОС с открытым исходным кодом, разрабатываемая сообществом программистовю. Ядро Linux разрабатывается независимо, а сами дистрибутивы (например, Ubuntu, Fedora, Debian) создаются на его основе и дополняются дополнительными программами и утилитами. В данной статье рассматривается выбор дистрибутива для сборки прошивки.</p>
+<h4 id="Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows"><a class="header" href="#Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows">Почему же нельзя заниматься этим на всем привычной ОС, Windows?</a></h4>
+<p>Ну, сборка на Linux считается более предпочтительной как минимум потому что многих утилит нет на Windows, а те которые есть, поставляются в крайне неудобной форме: архивы, установщики и т. д.  Однако есть возможность делать это на Windows при помощи виртуальных машин, или же WSL на Windows 10.</p>
+<p><strong>WSL</strong> - Windows Subsystem for Linux - Фича в Windows 10/11, позволяющая запускать Linux контейнеры прямо в Windows. Эти контейнеры можно установить из магазина приложений (Microsoft Store). Но почти все разработчики предпочитают нативный Linux, т. к. WSL может быть менее стабильным.</p>
+<h3 id="Ну-что-ж-приступим"><a class="header" href="#Ну-что-ж-приступим">Ну что ж, приступим?</a></h3>
+<p>Хорошо, если вы уже решились познать новую ОС, и начать все таки собирать прошивки (и не только), то начнем выбирать дистрибутив для вас.</p>
+<p>Большинство дистрибутивов разделяются на 2 лагеря:</p>
+<ul>
+<li>Debian-like</li>
+<li>Arch-like</li>
+</ul>
+<p>Как следует из названия, основой для всех Debian-like дистрибутивов является дистрибутив Debian, а основой Arch-like - Arch Linux</p>
+<p>Основное различие - система управления пакетами, или <strong>пакетный менеджер</strong>. С этим всем мы познакомимся в следующем параграфе. </p>
+<p>А пока, чтобы не грузить вас ненужной информацией, скажу: Debian-like системы подходят для новичков, легко освоить, шанс убить систему своими руками гораздо ниже, чем у второго лагеря, Arch-like же подходят для уже освоившихся пользователей, более сложны в настройке.</p>
+<h4 id="Самые-популярные-debian-like-системы"><a class="header" href="#Самые-популярные-debian-like-системы">Самые популярные Debian-like системы</a></h4>
+<ul>
+<li>Ubuntu (https://ubuntu.com/)</li>
+<li>Собственно, Debian (https://www.debian.org/index.ru.html)</li>
+<li>Linux Mint (Основан на Ubuntu) (https://linuxmint.com/)</li>
+</ul>
+<p>Все используют Ubuntu и вам советую. Хорошая ОС для как начала, так и для повседневного использования. От себя добавлю, что начинать нужно именно с нее, так как проста в установке, настройке, после установки можно сразу работать. Также советую Linux Mint, это та же Ubuntu, только немного с другим набором программ и в фирменной оболочке Cinnamon, которая более привычна для Windows-юзера.</p>
+<h4 id="Самые-популярные-arch-like-системы"><a class="header" href="#Самые-популярные-arch-like-системы">Самые популярные Arch-like системы</a></h4>
+<ul>
+<li>Manjaro (https://manjaro.org/)</li>
+<li>Arch Linux (https://www.archlinux.org/)</li>
+</ul>
+<p>Тут все немного не однозначно. С одной стороны, эти системы кушают меньше ОЗУ чем Debian-like, с другой стороны если ставить, то ставить Manjaro. Почему? Да потому что установка чистого Arch Linux очень, очень сложная, тем более для новичков, т. к. проводится почти полностью в ручную. Представьте ситуацию, вам дают загрузочную флешку с дистрибутивом, вы загружаетесь с нее и видите консоль с набором утилит. Все, дальше вы сами, по мануалу. Сложно, не правда-ли? А Manjaro это тот же Arch Linux со своими репозиториями и тоже прост в установке, и можно сразу работать после установки, но требует немного большей “допилки напильником” после установки. Также в Arch Linux (а соответственно и в Manjaro) существует такая прекрасная штука как AUR - репозиторий с исходными кодами пакетов. Там можно найти почти все, чего нет в обычных репозиториях.</p>
+<h3 id="Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать"><a class="header" href="#Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать">Хорошо, я выбрал дистрибутив. Но тут есть различные версии с различными “оболочками”, что выбрать?</a></h3>
+<p>Тут все чисто по вкусу. В каждой из оболочек есть что-то свое, какие-то легковесные, какие-то красивые. Вот список основных из них:</p>
+<ul>
+<li>Gnome (начиная с Ubuntu 18.04 используется вместо фирменной оболочки Unity)</li>
+<li>KDE Plasma (пожалуй, самая красивая и кастомизируемая оболочка)</li>
+<li>Cinnamon (фирменная оболочка Linux Mint)</li>
+<li>XFCE (достаточно легковесная, по умолчанию не очень красивая, но это решается установкой темы)</li>
+<li>LXQt (еще более легковесна, по умолчанию красивее XFCE, корни растут из LXDE)</li>
+<li>LXDE (пожалуй самая легковесная оболочка из популярных. Не красиво)</li>
+<li>Unity (когда-то крутая оболочка, но скажем спасибо Canonical, что прекратили ее развитие)</li>
+</ul>
+<h3 id="Вывод"><a class="header" href="#Вывод">Вывод</a></h3>
+<p>Для новичков, или вы хотите поставить, настроить и забыть, лишь обновляя пакеты, ставим только Ubuntu или что-либо на ее основе (напр. Linux Mint). Если же вы уже прошаренный, то советую попробовать Arch-like. Установку и настройку рассмотрим в следующем параграфе.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-выбор-подходящей-системы-1"><a class="header" href="#Параграф-1-выбор-подходящей-системы-1">Параграф 1: выбор подходящей системы</a></h1>
+<p>Людям, которые знают операционные системы Linux, этот параграф можно пропустить, так как, думаю, вы и без меня все знаете.</p>
+<h3 id="Что-такое-linux-и-с-чем-его-едят-1"><a class="header" href="#Что-такое-linux-и-с-чем-его-едят-1">Что такое Linux, и с чем его едят</a></h3>
+<p>Linux - это ОС с открытым исходным кодом, разрабатываемая сообществом программистовю. Ядро Linux разрабатывается независимо, а сами дистрибутивы (например, Ubuntu, Fedora, Debian) создаются на его основе и дополняются дополнительными программами и утилитами. В данной статье рассматривается выбор дистрибутива для сборки прошивки.</p>
+<h4 id="Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows-1"><a class="header" href="#Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows-1">Почему же нельзя заниматься этим на всем привычной ОС, Windows?</a></h4>
+<p>Ну, сборка на Linux считается более предпочтительной как минимум потому что многих утилит нет на Windows, а те которые есть, поставляются в крайне неудобной форме: архивы, установщики и т. д.  Однако есть возможность делать это на Windows при помощи виртуальных машин, или же WSL на Windows 10.</p>
+<p><strong>WSL</strong> - Windows Subsystem for Linux - Фича в Windows 10/11, позволяющая запускать Linux контейнеры прямо в Windows. Эти контейнеры можно установить из магазина приложений (Microsoft Store). Но почти все разработчики предпочитают нативный Linux, т. к. WSL может быть менее стабильным.</p>
+<h3 id="Ну-что-ж-приступим-1"><a class="header" href="#Ну-что-ж-приступим-1">Ну что ж, приступим?</a></h3>
+<p>Хорошо, если вы уже решились познать новую ОС, и начать все таки собирать прошивки (и не только), то начнем выбирать дистрибутив для вас.</p>
+<p>Большинство дистрибутивов разделяются на 2 лагеря:</p>
+<ul>
+<li>Debian-like</li>
+<li>Arch-like</li>
+</ul>
+<p>Как следует из названия, основой для всех Debian-like дистрибутивов является дистрибутив Debian, а основой Arch-like - Arch Linux</p>
+<p>Основное различие - система управления пакетами, или <strong>пакетный менеджер</strong>. С этим всем мы познакомимся в следующем параграфе. </p>
+<p>А пока, чтобы не грузить вас ненужной информацией, скажу: Debian-like системы подходят для новичков, легко освоить, шанс убить систему своими руками гораздо ниже, чем у второго лагеря, Arch-like же подходят для уже освоившихся пользователей, более сложны в настройке.</p>
+<h4 id="Самые-популярные-debian-like-системы-1"><a class="header" href="#Самые-популярные-debian-like-системы-1">Самые популярные Debian-like системы</a></h4>
+<ul>
+<li>Ubuntu (https://ubuntu.com/)</li>
+<li>Собственно, Debian (https://www.debian.org/index.ru.html)</li>
+<li>Linux Mint (Основан на Ubuntu) (https://linuxmint.com/)</li>
+</ul>
+<p>Все используют Ubuntu и вам советую. Хорошая ОС для как начала, так и для повседневного использования. От себя добавлю, что начинать нужно именно с нее, так как проста в установке, настройке, после установки можно сразу работать. Также советую Linux Mint, это та же Ubuntu, только немного с другим набором программ и в фирменной оболочке Cinnamon, которая более привычна для Windows-юзера.</p>
+<h4 id="Самые-популярные-arch-like-системы-1"><a class="header" href="#Самые-популярные-arch-like-системы-1">Самые популярные Arch-like системы</a></h4>
+<ul>
+<li>Manjaro (https://manjaro.org/)</li>
+<li>Arch Linux (https://www.archlinux.org/)</li>
+</ul>
+<p>Тут все немного не однозначно. С одной стороны, эти системы кушают меньше ОЗУ чем Debian-like, с другой стороны если ставить, то ставить Manjaro. Почему? Да потому что установка чистого Arch Linux очень, очень сложная, тем более для новичков, т. к. проводится почти полностью в ручную. Представьте ситуацию, вам дают загрузочную флешку с дистрибутивом, вы загружаетесь с нее и видите консоль с набором утилит. Все, дальше вы сами, по мануалу. Сложно, не правда-ли? А Manjaro это тот же Arch Linux со своими репозиториями и тоже прост в установке, и можно сразу работать после установки, но требует немного большей “допилки напильником” после установки. Также в Arch Linux (а соответственно и в Manjaro) существует такая прекрасная штука как AUR - репозиторий с исходными кодами пакетов. Там можно найти почти все, чего нет в обычных репозиториях.</p>
+<h3 id="Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать-1"><a class="header" href="#Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать-1">Хорошо, я выбрал дистрибутив. Но тут есть различные версии с различными “оболочками”, что выбрать?</a></h3>
+<p>Тут все чисто по вкусу. В каждой из оболочек есть что-то свое, какие-то легковесные, какие-то красивые. Вот список основных из них:</p>
+<ul>
+<li>Gnome (начиная с Ubuntu 18.04 используется вместо фирменной оболочки Unity)</li>
+<li>KDE Plasma (пожалуй, самая красивая и кастомизируемая оболочка)</li>
+<li>Cinnamon (фирменная оболочка Linux Mint)</li>
+<li>XFCE (достаточно легковесная, по умолчанию не очень красивая, но это решается установкой темы)</li>
+<li>LXQt (еще более легковесна, по умолчанию красивее XFCE, корни растут из LXDE)</li>
+<li>LXDE (пожалуй самая легковесная оболочка из популярных. Не красиво)</li>
+<li>Unity (когда-то крутая оболочка, но скажем спасибо Canonical, что прекратили ее развитие)</li>
+</ul>
+<h3 id="Вывод-1"><a class="header" href="#Вывод-1">Вывод</a></h3>
+<p>Для новичков, или вы хотите поставить, настроить и забыть, лишь обновляя пакеты, ставим только Ubuntu или что-либо на ее основе (напр. Linux Mint). Если же вы уже прошаренный, то советую попробовать Arch-like. Установку и настройку рассмотрим в следующем параграфе.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Установка-и-настройка-системы"><a class="header" href="#Установка-и-настройка-системы">Установка и настройка системы</a></h1>
+<p>И так, вы выбрали дистрибутив. Приступим к установке!</p>
+<h3 id="Для-установки-нам-потребуется"><a class="header" href="#Для-установки-нам-потребуется">Для установки нам потребуется:</a></h3>
+<ul>
+<li>Рабочий компьютер</li>
+<li>USB флэшка</li>
+<li>Интернет соединение</li>
+</ul>
+<h3 id="Скачиваем-дистрибутив"><a class="header" href="#Скачиваем-дистрибутив">Скачиваем дистрибутив</a></h3>
+<p>Тут все просто, думаю не стоит объяснять. Просто заходите на сайт выбранного дистрибутива, и скачиваете последнюю версию. Обычно скачивание прямое, но иногда можно скачать через торрент, от себя советую этот способ, т. к. таким способом скачается быстрее. </p>
+<blockquote>
+<p>Ссылки на сайты основных дистрибутивов находятся в предыдущем параграфе</p>
+</blockquote>
+<p>Скачали? Тогда переходим к следующему шагу!</p>
+<h3 id="Записываем-установщик-на-флэшку"><a class="header" href="#Записываем-установщик-на-флэшку">Записываем установщик на флэшку</a></h3>
+<p>Рассматривать метод с CD/DVD-ROM не буду, так как кто этой древностью сейчас пользуется?</p>
+<p>Уточню, что рассматриваться будут способы записи на Windows, так как предполагается, что вы собираетесь поставить Linux второй системой/перейти на него для сборки прошивок и других полезных дел.</p>
+<p>Так, нам нужна утилита для записи. Подойдет Etcher или тот же Rufus, без разницы. Рассмотрим подробнее…</p>
+<h3 id="Вариант-с-etcher"><a class="header" href="#Вариант-с-etcher">Вариант с Etcher</a></h3>
+<p>Скачиваем утилиту с сайта https://www.balena.io/etcher/. Вставляем ненужную флэшку в компьютер. Ну или нужную, просто предварительно скопируйте все нужные вам данные с нее. Запускаем Etcher</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/1.PNG" alt="Открывшееся окно" /> </p>
+<p>Откроется данное окно. Как видно, тут все предельно просто:</p>
+<pre><code>1. Выбираем образ дистрибутива
+2. Выбираем USB устройство
+3. Нажимаем Flash
+</code></pre>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/2.PNG" alt="" /></p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/3.PNG" alt="" /></p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/4.PNG" alt="" /></p>
+<p>Все, загрузочная флэшка записана</p>
+<h3 id="Вариант-с-rufus"><a class="header" href="#Вариант-с-rufus">Вариант с Rufus</a></h3>
+<p>Тут все немного по-сложнее чем с Etcher, но тоже просто.</p>
+<p>Скачиваем утилиту с сайта https://rufus.ie/. Запускаем…</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/5.PNG" alt="Открывшееся окно" /></p>
+<p>Откроется данное окно.</p>
+<ol>
+<li>
+<p>Выбираем устройство</p>
+</li>
+<li>
+<p>Выбираем образ дистрибутива</p>
+</li>
+<li>
+<p>В случае с Linux образами без разницы какой тип разделов на флешке выбирать, это имеет вес для Windows образов. Так же не имеет веса настройки файловой системы.
+Вот как примерно выглядит окно после настройки<br />
+<img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/6.PNG" alt="" /><br />
+Интересная фишка. Можно создать так называемый persist раздел прямо в утилите без заморочек. Он нужен для сохранения данных/настроек на LiveUSB</p>
+</li>
+<li>
+<p>Нажимаем Старт</p>
+<p><strong>Важно!</strong> Вас спросят о способе записи образа, так как почти все образы с Linux являются ISO-Hybrid образами. Не буду вдаваться в подробности, скажу только что нужно <strong>обязательно выбрать “Запись в режиме DD-образ”</strong>
+<img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/7.PNG" alt="" /></p>
+</li>
+<li>
+<p>Соглашаемся с этим</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/8.PNG" alt="" /></p>
+</li>
+<li>
+<p>Остается только ждать…</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/9.PNG" alt="" /></p>
+</li>
+</ol>
+<p>После того, как мы записали флэшку, самое время установить систему!</p>
+<h2 id="Установка-системы"><a class="header" href="#Установка-системы">Установка системы</a></h2>
+<p>К сожалению, раскрыть данный этап подробно я не могу ввиду технических возможностей. Но в интернете очень много гайдов, и ставить ту же Ubuntu не сложнее чем Windows. Установка <a href="https://wiki.archlinux.org/title/Installation_guide">Arch</a> (<a href="https://archlinuxgui.in/tutorials.html">GUI</a>)| <a href="https://help.ubuntu.ru/wiki/ubuntu_install">Ubuntu</a></p>
+<blockquote>
+<p>Я буду очень надеяться, что мои “коллеги” дополнят этот раздел подробной инструкцией</p>
+</blockquote>
+<h3 id="Настройка-среды"><a class="header" href="#Настройка-среды">Настройка среды</a></h3>
+<h3 id="Установка-необходимых-пакетов"><a class="header" href="#Установка-необходимых-пакетов">Установка необходимых пакетов</a></h3>
+<ul>
+<li>
+<p><strong>Debian-like:</strong></p>
+<pre><code class="language-bash">sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig repo python
+</code></pre>
+</li>
+<li>
+<p><strong>Arch-like:</strong>
+<em>Через <a href="https://github.com/Jguer/yay#installation">AUR</a></em></p>
+<pre><code class="language-bash">yay -S lineageos-devel python
+</code></pre>
+</li>
+</ul>
+<h3 id="Настройка-git"><a class="header" href="#Настройка-git">Настройка git</a></h3>
+<p>Вписываем свой никнейм и почту на GitHub:</p>
+<pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;you@example.com&quot;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-3-качаем-исходники-прошивки"><a class="header" href="#Параграф-3-качаем-исходники-прошивки">Параграф 3: качаем исходники прошивки</a></h1>
+<p>Работать будем целиком в терминале, чтобы не бегать из терминала в UI и обратно.</p>
+<p>Создаем папку, где будет хранится наша прошивка и заходим в неё. Пусть она условно будет называться LOS (сокращенное название Lineage OS), но можно назвать как угодно и еще даже циферки написать :)</p>
+<pre><code class="language-bash">mkdir LOS
+cd LOS
+</code></pre>
+<p>Отлично, теперь требуется скачать исходники прошивки. Открываем github.com/LineageOS и офигеваем, какое большое там количество всего. И все это качать? Да, но не вручную, а с помощью утилиты repo. Открываем репозиторий android либо manifest (зависит от прошивки), обычно он закреплен.</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/15.png" alt="Пример" /></p>
+<p>Ага! Первым делом в Readme видим как скачать. Замечательно :) Вводим</p>
+<pre><code class="language-bash">repo init -u git://github.com/LineageOS/android.git -b lineage-17.1
+repo sync
+</code></pre>
+<p>Скачивание началось и ждем.</p>
+<p>Чтобы обновить исходники, введите просто в папке с исходниками</p>
+<pre><code class="language-bash">repo sync
+</code></pre>
+<p>Если Вы хотите ограничить скорость закачивания, требуется ввести количество потоков.</p>
+<pre><code class="language-bash">repo sync -j#
+</code></pre>
+<p>Где # - количество потоков. Автор обычно вручную ставит 16 потоков для быстрого скачивания. Так же существуют самые разные агрументы для этих команд, подробнее: <a href="https://git-repo.info/en/docs/multi-repos/git-repo-init/">repo init</a> <a href="https://git-repo.info/en/docs/multi-repos/git-repo-sync/">repo sync</a></p>
+<p>Такой репозиторий, который мы открыли, обычно состоит из манифестов, которые представляют из себя xml файлы. Один файл может подключать другие файлы, тем самым не надо все хранить в одном файле, удобно. default.xml это манифест, в котором хранятся все исходники AOSP и исходники AOSP, которые были модифицированы командой Linege OS. В snippets/lineage.xml лежат уже исходники Lineage OS за их авторством, к примеру всеми известный плеер Eleven.</p>
+<p>И в принципе на этом параграф заканчивается, единственное, что хотелось бы немного рассказать про локальные манифесты.</p>
+<p>Локальные манифесты это манифесты, которые были написаны вручную или сгенерированы автоматически системой сборки для скачивания некоторых специфичных исходников, таких как ядра, common деревья и других репозиториев.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-4-исходники-устройства"><a class="header" href="#Параграф-4-исходники-устройства">Параграф 4: исходники устройства</a></h1>
+<p>Что ж, приступаем к самому интересному. Нам требуется скачать исходники устройства. Рассмотрим два случая: устройство официально поддерживается командой Lineage OS и устройство не поддерживается официально командой Lineage OS.</p>
+<h3 id="Устройство-официально-поддерживается"><a class="header" href="#Устройство-официально-поддерживается">Устройство официально поддерживается</a></h3>
+<p>Тут самое банальное. Надо только скачать проприетарные библиотеки из репозитория github.com/TheMuppets, где библиотеки раскиданы по производителям. Скажем, у нас смартфон производства Leeco. В поиске вбиваем leeco. Открываем репозиторий, копируем ссылку. Очевидно она будет выглядить так:</p>
+<pre><code>https://github.com/TheMuppets/proprietary_vendor_leeco
+</code></pre>
+<p>Так как мы собираем Lineage OS 17.1, то нам нужно скачать ветку lineage-17.1. Что ж, давайте сделаем это! Вводим следующую команду в корне исходников прошивки:</p>
+<pre><code class="language-bash">git clone https://github.com/TheMuppets/proprietary_vendor_leeco -b lineage-17.1 vendor/leeco
+</code></pre>
+<p>Давайте разберемся, что мы ввели:</p>
+<ul>
+<li>
+<p><code>git clone</code> - команда на скачивание репозитория</p>
+</li>
+<li>
+<p><code>https://github.com/TheMuppets/proprietary_vendor_leeco</code> - ссылка на репозиторий</p>
+</li>
+<li>
+<p><code>-b lineage-17.1</code> - указываем ветку, которую требуется скачать</p>
+</li>
+<li>
+<p><code>vendor/leeco</code> - путь, куда требуется скачать репозиторий</p>
+</li>
+</ul>
+<p>Внимание, если Ваше устройство производства Xiaomi, то скачать проприетарные библиотеки можно из gitlab.com/the-muppets.</p>
+<h3 id="Устройство-официально-не-поддерживается"><a class="header" href="#Устройство-официально-не-поддерживается">Устройство официально не поддерживается</a></h3>
+<p>И так, самая первая прошивка, которую собирают на новое устройство, это Lineage OS. Во всяком случае, обычно. Будем полагаться на удачу. Так что открываем github.com и в поиск вбиваем</p>
+<pre><code>device производитель кодовое-имя
+</code></pre>
+<p>К примеру, давайте найдем исходники Xiaomi Redmi Note 4X - mido. Вводим <code>device_xiaomi_mido</code>, видим n-ое количество репозиториев:</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/10.png" alt="GitHub Search" /></p>
+<p>Самое верхнее - дерево от Lineage OS, однако там дерево максимум для Lineage OS 16.0. Не подходит. Смотрим дальше. Есть дерево от Zeelog’а, у него есть дерево для Lineage OS 17.1. Отлично! Берем. Скачиваем по той же схеме, что и библиотеки в примере с устройством Leeco.</p>
+<blockquote>
+<p><strong>Примечание</strong>. Ветка lineage-17.1-4.9 предназначена для сборки Lineage OS 17.1 с ядром 4.9. Ветка lineage-17.1 предназначена для сборки Lineage OS 17.1 с ядром 3.18.</p>
+</blockquote>
+<p>Так-с, specific дерево скачали. По идее, если есть lineage.dependencies, то система при инициализации должна подтянуть необходимые исходники. Но так как автор любит все делать ручками, не везде такое работает и в принципе мы учимся, поэтому открываем этот файл и смотрим:</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/11.png" alt="lineage.dependencies" /></p>
+<p>В случае mido здесь мы видим только ядро. Искать его не надо, открываем профиль Zeelog’а и в поиск вбиваем <code>android_kernel_xiaomi_mido</code>. Уже по налаженной схеме клонируем его. Куда клонировать? Можно посмотреть в <code>lineage.dependencies</code>. Хотя Вы наверняка заметили некоторую тенденцию в названии репозиториев и куда они были клонированы. Вернемся к тому же ядру, android_<strong>kernel_xiaomi_mido</strong> - <strong>kernel/xiaomi/mido</strong>. Думаю, вопросы излишни. </p>
+<p>Теперь надо скачать проприетарные библиотеки. К сожалению, в <code>lineage.dependencies</code> они не прописаны. Открываем профиль Zeelog’а снова и ищем что-то типа <code>vendor_xiaomi</code>. Нашли? Отлично, клонируем в соответствующую папку из нужной ветки. Однако если Вы работаете с другим устройством, у вас может быть иначе, к примеру, репозиторий называется <code>proprietary_vendor_lenovo_A6020</code>, очевидно, что клонируем в <code>vendor/lenovo/A6020</code>. И если в <code>lineage.dependencies</code> есть еще что-то, то тоже клонируем в соответствующие папки.</p>
+<p>Вообще, если есть возможность, то лучше поспрашивать у других сборщиков под ВАШЕ устройство что и откуда скачать для сборки прошивки. В некоторых случаях нужно и вовсе патчить исходники прошивки. К примеру, для моего Asus Zenfone 2 Laser ZE500KL (Z00ED) требуется модифицировать HAL’ы.</p>
+<p>Исходники готовы к сборке под устройство. Приступаем к самой долгой и нудной части - сборке прошивки.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-5-Инициализация-и-сборка"><a class="header" href="#Параграф-5-Инициализация-и-сборка">Параграф 5: Инициализация и сборка</a></h1>
+<p>И вот мы переходим к самому <del>интересному</del>, страшному и интригующему в этой главе - к сборке готовой прошивки!</p>
+<p>Для начала требуется настроить окружение, что происходит посредством запуска скрипта build/envsetup.sh. Тут уместна шутка “есть два типа людей”:</p>
+<pre><code class="language-bash">. build/envsetup.sh
+</code></pre>
+<pre><code class="language-bash">source build/envsetup.sh
+</code></pre>
+<p>Да, это два варианта как запустить скрипт. Автор данного текста относит себя к первому типу людей.</p>
+<p>Окей, теперь требуется указать системе сборки под какое устройство происходит сборка. Команда должна быть следующей:</p>
+<pre><code class="language-bash">lunch lineage_codename-userdebug
+</code></pre>
+<p>Где <code>codename</code> - кодовое название устройства. Не боимся, сидим и ждем, когда сделает все, что требуется системе сборки.</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%201%20%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D0%BB/images/12.png" alt="Пример" /></p>
+<p>Отлично! Мы можем почитать почти всю информацию об устройстве, на которое собираем прошивку, и немного об ОС, которая стоит на машине для сборки. Теперь мы готовы собирать. И тут снова 2 варианта:</p>
+<ol>
+<li>Сборка прошивки с использованием make и количеством потоков. Если не указывать количество потоков, то сборка будет происходить в однопоточном режиме</li>
+</ol>
+<pre><code class="language-bash">make bacon -j#
+</code></pre>
+<ol start="2">
+<li>Сборка прошивки с использованием mka, он автоматически установит нужное количество потоков для сборки</li>
+</ol>
+<pre><code class="language-bash">mka bacon
+</code></pre>
+<p>В чем разница? Об этом нам скажет <a href="https://4pda.to/forum/index.php?showuser=4383879">Mirsaid02</a> с 4PDA:</p>
+<blockquote>
+<p><strong>mka</strong> - лучшая команда для сборки в плане качества, т.к использует программу sched_tool, при сборке будет возникать меньше ошибок, выбирает для каждой части сборки подходящий компилятор, но при этом сборка проходит на несколько часов дольше, в зависимости от ТХ вашего ПК или ноутбука, также его называют “супер-заряженной” версией make.</p>
+<p><a href="https://4pda.to/forum/index.php?showtopic=209610&amp;view=findpost&amp;p=44763389">Пост</a></p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-6-В-завершение"><a class="header" href="#Параграф-6-В-завершение">Параграф 6: В завершение</a></h1>
+<p>В принципе Вы научились собирать прошивку, поздравляю! Однако этого будет маловато для ваших целей, не так ли? Всегда хочется собрать что-то другое, что еще на ваш любимый девайс еще не запилили. А может вашу любимую прошивку давно не обновляли и не добавили свежие фиксы для устройства и новые фичи по типу Dirac? Если я не угадал, то это забавно вышло :) Но я уверен, Вам мало просто сборки, Вы хотите чем-то выразиться среди толпы. Надеюсь, что именно здесь мы научим Вас основам.</p>
+<p>Ваши учителя:</p>
+<ul>
+<li><a href="https://github.com/Roker2"><strong>Roker2</strong></a></li>
+<li><a href="https://github.com/SanyaPilot"><strong>SanyaPilot</strong></a></li>
+<li><a href="https://github.com/CakesTwix"><strong>CakesTwix</strong></a></li>
+<li><a href="https://github.com/Ultra119"><strong>Ultra119</strong></a></li>
+</ul>
+<p>Книга в данный момент времени в разработке. Если Вы уже человек с опытом и хотите поделиться своими знаниями, то Welcome to the club!</p>
+<p><a href="https://github.com/Roker2/BookAboutBuilding">Репозиторий книги</a></p>
+<p>Ваш Roker2</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Введение-1"><a class="header" href="#Введение-1">Введение</a></h1>
+<p>Начнем с определения “git”.</p>
+<blockquote>
+<p>Git - распределенная система управления версиями.</p>
+<p>© Wikipedia</p>
+</blockquote>
+<p>По факту git позволяет создавать историю изменений и манипулировать ею, тем самым достигая возможности более быстро разбираться в проблеме, анализировать код и т. д. Без знаний git’а будет очень сложно работать с исходниками Android и в принципе в программировании, ибо инструмент ходовой и бесплатный (если Вы пользовались Mercurial’ом, то скорее всего будет просто освоить git) и очень полезный. Пренебрегать им нельзя ни в коем случае!</p>
+<p>Про название коммитов в дереве устройства и в вендоре. Обычно они имеют такие название:</p>
+<ol>
+<li>“codename: part_of_tree: Name” (пример: “mido: mixer_paths: Remove duplicate entries”);</li>
+<li>“codename: Name” (пример: “mido: Kang tissot s5k5e8_ofilm”);</li>
+<li>“part_of_tree: Name” (пример: “power: Handle Mode::LAUNCH power hints”).</li>
+</ol>
+<p>В принципе и все, едем к основной части!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-Создание-аккаунта-на-github-и-настройка-git-под-свой-аккаунт"><a class="header" href="#Параграф-1-Создание-аккаунта-на-github-и-настройка-git-под-свой-аккаунт">Параграф 1: Создание аккаунта на GitHub и настройка git под свой аккаунт</a></h1>
+<p>Хочу сказать, что если Вы имеете аккаунт на GitHub или чем-то подобном и знаете git, то это глава Вам не нужна, ибо Вы и так все знаете.</p>
+<h4 id="Создаем-аккаунт-на-github"><a class="header" href="#Создаем-аккаунт-на-github">Создаем аккаунт на GitHub</a></h4>
+<p>Тут в принципе ничего сложного, просто идем на <a href="https://github.com/">github.com</a>, вводим почту и пароль, входим, вуаля, у нас есть аккаунт на GitHub. Здесь мы можем создавать свои репозитории, в том числе и приватные, оценить чей-то репозиторий, подписаться на обновления репозитория, подписаться на человека, искать какие-то репозитории, поставить аватарку и статус :)</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202%20git,%20%D1%81%20%D1%87%D0%B5%D0%BC%20%D0%B5%D0%B3%D0%BE%20%D0%B5%D0%B4%D1%8F%D1%82%20%D0%B8%20%D0%B7%D0%B0%D1%87%D0%B5%D0%BC%20%D0%BE%D0%BD/images/1.png" alt="Мой аккаунт" /></p>
+<p>Перейдем к тому, чтобы наши коммиты (commits) и черри-пики (cherry-picks) имели информацию о нас.</p>
+<p>И так, варианта два и они различаются лишь флагом <code>--global</code>, который говорит, что информация о нас будет использоваться везде по умолчанию.</p>
+<p>Пример глобальной настройки пользователя</p>
+<pre><code class="language-git">git config --global user.name &quot;John Doe&quot;
+git config --global user.email johndoe@example.com
+</code></pre>
+<p><a href="https://git-scm.com/book/ru/v2/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%9F%D0%B5%D1%80%D0%B2%D0%BE%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-Git">Оригинал</a>, откуда взят пример</p>
+<p><code>user.name</code> это никнейм вашего GitHub аккаунта, а <code>user.email</code> - почта, которую Вы использовали при регистрации на GitHub.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-2-Ходовые-команды-gitа"><a class="header" href="#Параграф-2-Ходовые-команды-gitа">Параграф 2: Ходовые команды git’а</a></h1>
+<p>Здесь приведены не все команды, только необходимая база, которой я обычно пользуюсь. Для чего-то специфического вперед в Google или в любой другой поисковик.</p>
+<blockquote>
+<pre><code class="language-bash">git checkout branch
+</code></pre>
+<p>Это переключение между бранчами.</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git clone url -b branch path/to/folder
+</code></pre>
+<p>Это команда для скачивания репозитория по ссылке url из ветки branch (требуется флаг -b перед названием ветки) в папку path/to/folder. Ветка и папка являются необязательными аргументами.</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git remote add alias_repo_name url
+</code></pre>
+<p>Это добавление кастомного имени для репозитория. Используется в последующем для скачивания данных с указанного репозитория.</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git fetch url
+git fetch alias_repo_name 
+</code></pre>
+<p>Это скачивание данных (коммитов) с репозитория по ссылке url или с репозитория, который имеет кастомное название. Тут между этими вариантами есть разница. Если чисто по ссылке, то он скачает данные только о главной ветке и они сотрутся после скачивания данных с другой ссылки. Второй вариант скачает информацию со всех бранчей и сохранит ее. Той же командой ее можно и обновить.</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git pull
+</code></pre>
+<p>Это автоматизированная версия git fetch. Он загружает бранч из удаленного репозитория, а затем объединяет ее с текущим.</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git push
+</code></pre>
+<p>Это противоположность fetch (с некоторыми оговорками). Он позволяет вам переместить локальную ветвь в другой репозиторий, что служит удобным способом публикации коммитов. </p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git cherry-pick commit_code
+</code></pre>
+<p>Это перенос чужого коммита к себе в репозиторий с сохранением авторства (вы указаны как человек, который перенес данный коммит), по факту очень нужная и ходовая команда. Почему? Никто не любит, когда его труды вдруг почему-то под чужим авторством. Придется вертеться с этим фактом в нашем деле. Будьте осторожны. ;)</p>
+</blockquote>
+<blockquote>
+<pre><code class="language-bash">git merge branch / commit_code 
+</code></pre>
+<p>Это слияние всех отсутствующих коммитов, либо из другого бранча, либо до отдельного коммита включительно в текущий бранч. Используется чтобы собрать воедино разветвленную историю.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Введение-2"><a class="header" href="#Введение-2">Введение</a></h1>
+<p>Как я уже говорил, приводить я буду на примере устройства Xiaomi Redmi Note 4X Snapdragon, он же mido, также будут приведены в пример устройства Asus ZenFone 2 Laser ZE500KL/KG (Z00ED/RD или же Z00xD) и Sony Xperia Z3 Compact, потому что:</p>
+<ul>
+<li>Они у меня есть</li>
+<li>Я в них разбираюсь</li>
+<li>Это три устройства, у которых структура деревьев разная, что дает расширить немного кругозор</li>
+</ul>
+<p>Да, сузив кругозор до трех устройств, из которых более-менее я разбираюсь только в одном, можно потерять часть информации. К сожалению, это так и как-то расширить свой же кругозор я не имею возможности. Надеюсь, кто-то заглянет и добавит недостающую информацию :)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-что-есть-что-и-для-чего"><a class="header" href="#Параграф-1-что-есть-что-и-для-чего">Параграф 1: что есть что и для чего</a></h1>
+<p>И так, исходники устройства состоят обычно из:</p>
+<ul>
+<li>Kernel - ядро</li>
+<li>Device tree - дерево устройства</li>
+<li>Vendor - вендор, проприетарные библиотеки</li>
+</ul>
+<p>Начнем с дерева. Дерево устройства - набор конфигурационных файлов (конфигов) разных форматов. В дереве прописываются различные пути, конфиги сборки, часто изменяющиеся конфиги, которые копируются в прошивку, исходники.</p>
+<p>Ядро - ядро Linux, на котором работают все Android устройства, в нем содержатся различные драйвера, переменные для них, деревья для сборки ядра и конфиги, которые говорят, что надо собирать в ядре.</p>
+<p>Вендор - набор проприетарных (уже готовых, собранные производителем или кем-либо еще) библиотек устройства, которые просто копируются в устройство. Вендор состоит из тех библиотек, исходников которых нет в открытом доступе.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-2-что-такое-дерево-и-сколько-их-должно-быть"><a class="header" href="#Параграф-2-что-такое-дерево-и-сколько-их-должно-быть">Параграф 2: что такое дерево и сколько их должно быть</a></h1>
+<p>Повторим определение из введения.</p>
+<p>Дерево устройства - набор конфигурационных файлов (конфигов) разных форматов. В дереве прописываются различные пути, конфиги сборки, часто изменяющиеся конфиги, которые копируются в прошивку, исходники.</p>
+<p>Обычно дерево лежит по пути <code>device/vendor/devicecodename</code>, где <code>vendor</code> - производитель, а <code>devicecodename</code> - кодовое имя устройства. Приведем пример для Xiaomi Redmi Note 4X - <code>device/xiaomi/mido</code>.</p>
+<p>Но бывает такое, что устройства дико похожи по составляющей дерева и одинаковую часть попросту переносят в отдельное общее дерево - common. Для примера рассмотрим Asus ZenFone 2 Laser ZE500KL/KG и Asus ZenFone Max (Z010D).</p>
+<p>Структура получается следующая - в папке <code>device/asus</code> лежат три дерева:</p>
+<ul>
+<li>Общее: msm8916-common</li>
+<li>Специфическое: Z00xD (объединенное дерево для Asus ZenFone 2 Laser ZE500KL и Asus ZenFone 2 Laser ZE500KG)</li>
+<li>Специфическое: Z010D</li>
+</ul>
+<p>По итогу, вся база лежит в msm8916-common, а специфика лежит в специфичных деревьях.</p>
+<p><a href="https://github.com/Asus-MSM8916">Ссылка на проект</a> с исходниками, бранч lineage-16.0.</p>
+<p>Но самое смешное, что общих деревьев может быть еще больше!</p>
+<p>Приведу пример для Sony Xperia Z3 Compact:</p>
+<ul>
+<li><code>device/sony/z3c</code></li>
+<li><code>device/sony/shinano-common</code></li>
+<li><code>device/sony/msm8974-common</code></li>
+<li><code>device/sony/common</code></li>
+</ul>
+<p>4 дерева, которые друг за другом подключаются. Важно не пропустить данную информацию, иначе будет потом непонятно почему на этапе инициализации сборки произошла ошибка.</p>
+<p>Возникает все же резонный вопрос: не проще ли все-таки все в одно дерево “запихнуть” и не париться?</p>
+<p>И я скажу Вам нет. На то есть две причины:</p>
+<ul>
+<li>Если другое устройство, на которое собирается прошивка, использует общие деревья, то сокращается количество действий, которое нужно совершить для сборки (работает в том случае, если собирается прошивка не с нуля);</li>
+<li>Много времени и сил занимает добавление одного коммита в целый ряд устройств, проще один коммит в одно дерево, в итоге изменение будет во всех устройствах, которые используют общее дерево.</li>
+</ul>
+<p>В итоге, получается только выгода. Похожую ситуацию мы увидим в вендоре.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-3-Что-такое-vendor-и-почему-он-имеет-чужие-библиотеки"><a class="header" href="#Параграф-3-Что-такое-vendor-и-почему-он-имеет-чужие-библиотеки">Параграф 3: Что такое vendor и почему он имеет чужие библиотеки</a></h1>
+<p>Vendor Tree (или просто vendor для сокращения, не путать с разделом) - набор проприетарных (уже готовых, собранные производителем или кем-либо еще) библиотек устройства, которые просто копируются в устройство. Vendor состоит из тех библиотек, исходников которых нет в открытом доступе. В основном там хранятся библиотеки, которые со стока (как правило специфичные для конкретной модели) и общие, которые взяты с CAF или смартфона с необходимой версией Android с таким же CPU (или из его семейства, к примеру некоторые библиотеки с msm8996 будут спокойно работать на msm8953) или просто с другой модели.</p>
+<p>Итак, стоковые библиотеки понятно почему лежат в vendor, они заточены под данный смартфон. А зачем все же там лежат библиотеки, которые с других устройств?</p>
+<ol>
+<li>Некоторые сами по себе общие, к примеру библиотеки AptX от crosshatch прекрасно чувствуют себя на mido.</li>
+<li>Некоторые заточены только под конкретный CPU/семейство CPU, тем самым на разных устройствах с таким же CPU/семейством CPU они будут работать без проблем (не всегда).</li>
+<li>Внезапно подошли, даже не смотря на их специфичность.</li>
+</ol>
+<p>Про 3-ий пункт хотелось бы подробнее, так как здесь есть маленькая история. Ковыряя библиотеки mido мне стрельнуло попробовать что-то сделать с chromatix-библиотеками камеры. Посмотрел какие камеры у меня на моем mido и пошел смотреть модели с такими же камерами. Оказалось, что у tissot ровно такая же фронталка. Не долго думая, я быстренько сделал Magisk-модуль с этими библиотеками и… О чудо, камера работает! Воодушевившись, я попробовал еще и eeprom-библиотеку взять. Камера тоже работает! Крутяк! Далее я наткнулся на bardock, у него вроде как были библиотеки под мою основную камеру. Также сделал Magisk-модуль и… Камера работает, но все в красных тонах. Мда, грустно, но ладно, модуль удаляю и все возвращается на круги своя.</p>
+<p>Вывод: иногда бывают случаи, что вот идеально все вписывается и работает, хотя казалось бы специфичные библиотеки с другого устройства. С этим надо быть крайне осторожным, при неизвестных последствиях можно получить неисправность устройства.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-4-Что-такое-Ядро"><a class="header" href="#Параграф-4-Что-такое-Ядро">Параграф 4: Что такое Ядро</a></h1>
+<p>Что такое ядро? Ядро операционной системы - в данном случае Android - это <strong>компонент, который помогает вашим приложениям взаимодействовать с вашим оборудованием.</strong> Оно управляет системными ресурсами, при необходимости обменивается данными с внешними устройствами и т. д. Android использует вариант ядра Linux, содержит базовый набор драйверов, которые необходимы для работы устройства. Поскольку ядро Android по умолчанию является производным от ядра Linux, можно с уверенностью сказать, что ядро Android также является <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D0%BB%D0%B8%D1%82%D0%BD%D0%BE%D0%B5_%D1%8F%D0%B4%D1%80%D0%BE">монолитным</a>. Рассмотрим пример: предположим, вы установили приложение для съемки фотографий. Для этого вам нужно получить доступ к камере вашего телефона. Но приложение не может этого сделать. Оно не может напрямую получить доступ к камере, чтобы делать фотографии. Вместо этого оно посылает запрос ядру, и ядро предоставляет доступ к камере. Без ядра для приема и отправки информации разработчикам пришлось бы писать код для каждого отдельного события для каждого отдельного элемента ПО вашего устройства. С ядром все, что им нужно делать, это взаимодействовать с ним через API системы Android, а разработчикам нужно только заставить ПО устройства взаимодействовать с ядром.</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203%20%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0/images/1.png" alt="Представление наглядно" /></p>
+<h3 id="Почему-ядро-должно-постоянно-обновляться"><a class="header" href="#Почему-ядро-должно-постоянно-обновляться">Почему ядро должно постоянно обновляться?</a></h3>
+<p>Ядро Linux постоянно меняется. Множество улучшений попадает в ядро, чтобы сделать его более надежным, безопасным и продвинутым каждый день. Вполне логично, что вся эта дельта улучшений попадает в ядро Android при любой возможности. Многие производители сохраняют ядро неизменным при незначительном обновлении Android, в основном потому, что обновление ядра (называемое BSP - Board Support package) часто приходит от производителя чипсета (TI, Samsung, Qualcomm, Mediatek и т.д.). При изменении ядра для обновления Android, часто требуется много тестирования и обеспечения стабильности. Поэтому это часто приводит к задержке обновлений Android, а иногда и к прекращении обновлений ядра, когда поставщики чипсетов не поддерживают их.
+Так же это объясняет, почему производители не очень часто обновляют версию ядра вместе с версией Android.</p>
+<h3 id="Дерево-устройства-dt"><a class="header" href="#Дерево-устройства-dt">Дерево устройства (DT)</a></h3>
+<p>Дерево устройств (DT) - это структура данных, состоящая из именованных узлов и свойств, которые описывают оборудование которое, в обычных условиях, обнаружить невозможно. Операционные системы, такие как ядро Linux, используемое в Android, используют DT для поддержки широкого спектра аппаратных конфигураций, используемых в устройствах на базе Android. Производители оборудования снабжают ядро своими собственными DT, которые Linux затем компилирует в файл Device Tree Blob (DTB), используемый загрузчиком.</p>
+<p>Оверлей дерева устройства (DTO) позволяет наложить центральный блок дерева устройств (DTB) на дерево устройств. Загрузчик, использующий DTO, может поддерживать DT системы-на-чипе (SoC) и динамически накладывать DT для конкретного устройства, добавляя узлы в дерево и внося изменения в свойства существующего дерева.</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203%20%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0/images/2.png" alt="Структура" /></p>
+<h4 id="Терминология"><a class="header" href="#Терминология">Терминология</a></h4>
+<ul>
+<li><code>DT</code> — Дерево устройства</li>
+<li><code>DTB</code> — Блоб дерева устройства</li>
+<li><code>DTBO</code> — Блоб дерева устройства для оверлея</li>
+<li><code>DTC</code> — Компилятор дерева устройства</li>
+<li><code>DTO</code> — Оверлей дерева устройства</li>
+<li><code>DTS</code> — Исходник дерева устройства</li>
+<li><code>FDT</code> — Сплющенное дерево устройства. Двоичный формат, содержащийся в блоб-файле .dtb</li>
+</ul>
+<h3 id="Типы-ядра"><a class="header" href="#Типы-ядра">Типы ядра</a></h3>
+<ul>
+<li>
+<p><strong>Android Common Kernel (ACK)</strong>
+<em>Ядро, которое находится ниже ядра LTS и включает в себя исправления, представляющие интерес для сообщества Android, которые не были объединены в основные ядра Linux или ядра с длительной поддержкой (LTS). Более новые ACK (версии 5.4 и выше) также известны как ядра GKI, поскольку они поддерживают разделение кода Generic Kernel, не зависящего от аппаратного обеспечения, и модулей GKI, не зависящих от аппаратного обеспечения.</em></p>
+</li>
+<li>
+<p><strong>Android Open Source Project (AOSP) kernel</strong></p>
+</li>
+<li>
+<p><strong>Feature kernel</strong>
+<em>Ядро, для которого гарантированно реализованы функции релиза платформы. Например, в Android 12 двумя функциональными ядрами были android12-5.4 и android12-5.10. Функции Android 12 не могут быть перенесены обратно на ядра 4.19 после обновления; набор функций будет аналогичен устройству, которое было запущено с 4.19 на R и обновлено до S).</em></p>
+</li>
+<li>
+<p><strong>Generic Core Kernel</strong>
+<em>Часть ядра GKI, которая является общей для всех устройств</em>.</p>
+</li>
+<li>
+<p><strong>Generic Kernel Image (GKI) kernel</strong>
+<em>Любое более новое (5.4 и выше) ядро ACK (в настоящее время только aarch64). Это ядро состоит из двух частей: ядро GKI с общим для всех устройств кодом и модули ядра GKI, разработанные Google, которые могут быть динамически загружены на устройства, где это необходимо.</em></p>
+</li>
+<li>
+<p><strong>Launch Kernel</strong>
+<em>Ядро, которое подходит для запуска устройства для данного выпуска платформы Android. Например, в Android 12 допустимыми ядрами для запуска были 4.19, 5.4 и 5.10.</em></p>
+</li>
+<li>
+<p><strong>Long Term Supported (LTS) kernel</strong>
+<em>Ядро Linux, которое поддерживается от 2 до 6 лет. Ядра LTS выпускаются раз в год и являются основой для каждого из ACK Google.</em></p>
+</li>
+</ul>
+<h4 id="Типы-ветвей-ядра"><a class="header" href="#Типы-ветвей-ядра">Типы ветвей ядра</a></h4>
+<ul>
+<li>
+<p><strong>ACK KMI kernel branch</strong>
+<em>Ветвь, с которой собираются ядра GKI. Например, android12-5.10 и android13-5.15.</em></p>
+</li>
+<li>
+<p><strong>Android-mainline</strong>
+<em>Основная ветвь разработки для функций Android. Когда новое ядро LTS объявляется выше по течению, соответствующее новое ядро GKI ответвляется от android-mainline.</em></p>
+</li>
+<li>
+<p><strong>Linux mainline</strong>
+<em>Основная ветвь разработки для вышестоящих ядер Linux, включая ядра LTS.</em></p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-5-Адаптация-исходников-устройства"><a class="header" href="#Параграф-5-Адаптация-исходников-устройства">Параграф 5: Адаптация исходников устройства</a></h1>
+<p>Внимание! Здесь будут общие знания и они будут касаться в основном дерева. По поводу более детальной адаптации смотрите репозиторий прошивки в поисках примеров и спрашивайте у поддержки.</p>
+<p>И так, для базы своего дерева я рекомендую взять дерево для Lineage OS. И так, почему? Потому что Lineage OS реализовала некоторые фичи, которые также используются в Lineage-based прошивках (логично), либо были портированы на AOSP-based прошивки. К примеру:</p>
+<ul>
+<li><code>FlipFlap</code> (поддержка магнитных чехлов)</li>
+<li><code>Touch HAL</code> (поддержка кастомных фич тачскрина)</li>
+<li><code>LiveDisplay HAL</code> (поддержка кастомной настройки дисплея)</li>
+</ul>
+<p>В пример возьмем дерево для mido.</p>
+<h3 id="Общие-моменты"><a class="header" href="#Общие-моменты">Общие моменты</a></h3>
+<p>Как мы уже выяснили, есть конфиг lineage_mido.mk. Его надо переименовать в соответствии с прошивкой (см. другие деревья для этой прошивки). К примеру, в carbon_mido.mk. Далее открываем этот файл. Находим переменную PRODUCT_NAME, там будет следующий текст</p>
+<pre><code class="language-makefile">PRODUCT_NAME := lineage_mido
+</code></pre>
+<p>Логично предположить, что lineage надо менять на carbon</p>
+<pre><code class="language-makefile">PRODUCT_NAME := carbon_mido
+</code></pre>
+<p>Чуть выше мы увидим данный код</p>
+<pre><code class="language-makefile">$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+</code></pre>
+<p>Так-с, здесь надо смотреть на что менять. К примеру в CarbonROM надо вписать следующий код (это для смартфонов, так как mido это смартфон, а не планшет или что-то еще)</p>
+<pre><code class="language-makefile">$(call inherit-product, vendor/carbon/config/gsm.mk)
+$(call inherit-product, vendor/carbon/config/common.mk)
+</code></pre>
+<p>Так, сохраняем, открываем AndroidProducts.mk. Сразу видим, что у нас есть следующий код</p>
+<pre><code class="language-makefile">PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/lineage_mido.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_mido-user \
+    lineage_mido-userdebug \
+    lineage_mido-eng
+</code></pre>
+<p>Опять-таки логично подумать, что надо lineage поменять на carbon (как минимум мы же переименовали lineage_mido.mk в carbon_mido.mk), это верно. lineage_mido.mk меняем на carbon_mido.mk, а lineage_mido-user и т. д. меняем на carbon_mido-user и т. д. (это вариации какой билд можно собрать). И должно получиться нечто такое</p>
+<pre><code class="language-makefile">PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/carbon_mido.mk
+
+COMMON_LUNCH_CHOICES := \
+    carbon_mido-user \
+    carbon_mido-userdebug \
+    carbon_mido-eng
+</code></pre>
+<h3 id="lineage-os-based---lineage-os-based"><a class="header" href="#lineage-os-based---lineage-os-based">Lineage OS based -&gt; Lineage OS based</a></h3>
+<p>По факту хватит всего того, что описано выше.</p>
+<h3 id="lineage-os-based---aosp-based"><a class="header" href="#lineage-os-based---aosp-based">Lineage OS based -&gt; AOSP based</a></h3>
+<p>Выясняем, чего нету в прошивке. В CarbonROM к примеру нету каких либо из фич, которые я перечислял в самом начале параграфа. Требуется вырезать Touch HAL, LiveDisplay и FlipFlap overlay, если все это есть и этого в прошивке нет. Touch HAL лежит в папке touch, LiveDisplay HAL - в папке livedisplay, FlipFlap overlay - в lineage-overlay/packages/apps/FlipFlap. Все эти папки вырезаем. Далее открываем файл device.mk и убираем следующий код</p>
+<pre><code class="language-makefile"># Touch features
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.xiaomi_mido
+</code></pre>
+<pre><code class="language-makefile"># LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.xiaomi_mido
+</code></pre>
+<pre><code class="language-makefile"># FlipFlap
+PRODUCT_PACKAGES += \
+   FlipFlap
+</code></pre>
+<p>Также вырезаем сборку Trust HAL (если его в прошивке нет)</p>
+<pre><code class="language-makefile"># Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+</code></pre>
+<p>Сохраняем и закрываем файл.</p>
+<p>Теперь требуется отредактировать SEPolicy! Открываем sepolicy/vendor/file_contexts и находим следующее:</p>
+<pre><code class="language-makefile">/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_mido u:object_r:hal_lineage_livedisplay_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.xiaomi_mido       u:object_r:hal_lineage_touch_default_exec:s0
+</code></pre>
+<p>Вспоминаем, что LideDisplay HAL и Touch HAL были благополучно удалены, поэтому удаляем эти две строчки, но надо убрать в SEPolicy еще и правила для hal_lineage_livedisplay_qti_exec и hal_lineage_touch_default_exec. Самое простое - grep’нуть все правила SEPolicy нашего дерева. Делается так:</p>
+<pre><code class="language-bash">grep -InRI &quot;place_here_searched_text&quot;
+</code></pre>
+<p>Таким образом мы увидим все файлы, которые имеют включение текста “place_here*_*searched_text”, надеюсь логика понятна. И так, ищем и удаляем эти правила. Если файл состоит целиком из того, что относится к искомым типам, то попросту удаляем (скорее всего так и будет). Уря! Готово!</p>
+<h3 id="aosp-based---lineage-os-based"><a class="header" href="#aosp-based---lineage-os-based">AOSP based -&gt; Lineage OS based</a></h3>
+<p>Тут по факту хватило бы общих моментов для данного дела, однако мы помним, что есть такие фичи как Touch HAL и LiveDisplay HAL! Их можно написать и добавить правила SEPolicy для них. Если Вы написали/портировали/перенесли HAL и он работает в Permissive, то я поздравляю. Следующий шаг это добавить новый HAL в file_contexts, собрать прошивку и установить ее. Далее вертим HAL как можем, чтобы набрались отказы SEPolicy. Как только мы собрали все отказы, сохраняем logcat и добавляем эти правила на базе собранных отказов. Переводим SELinux в Enforcing, собираем, ставим и проверяем. Если все работает, то я поздравляю, Вы сделали это!</p>
+<h3 id="Напоследок"><a class="header" href="#Напоследок">Напоследок</a></h3>
+<p>Не гнушайтесь смотреть чужие деревья. Вы не можете сходу все знать. Делайте по примеру других и чуть-чуть вносите свою лепту, если это требуется. И сохраняйте авторство! :)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Введение-3"><a class="header" href="#Введение-3">Введение</a></h1>
+<p>В этой главе мы расскажем о:</p>
+<ul>
+<li>обновлении проприетарных библиотек устройства;</li>
+<li>патчинге проприетарных библиотек;</li>
+<li>обновлении компонентов дерева;</li>
+<li>работе с sepolicy;</li>
+<li>обновлении и сборке ядра.</li>
+</ul>
+<p>Со всем этим Вы столкнетесь в своей “карьере” сопровождающего Android-устройства. Можно задать резонный вопрос: “Зачем обновлять что-либо, если оно и так работает?” Android не стоит на месте, как и кастомные прошивки, требуется следить за новшествами и за обновлением различных специфичных компонентов вашего устройства, как ядро, дерево и библиотеки - все это постоянно или с переменным успехом обновляется. К примеру, в плане ядра Linux выходят новые версии ядер с исправлениями и улучшениями, а также CAF постоянно полирует код для своих процессоров. Если мы говорим про патчинг, то есть такая проблема, что некоторые проприетарные библиотеки крайне специфичны и их ничем подменить нельзя. Приходится их патчить, чтобы они работали с более новой версией Android.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-Дампы-vendor-proprietary-filestxt-и-обновление-библиотек"><a class="header" href="#Параграф-1-Дампы-vendor-proprietary-filestxt-и-обновление-библиотек">Параграф 1: Дампы, vendor, proprietary-files.txt и обновление библиотек</a></h1>
+<p>Здесь мы начнем говорить о том, что такое дампы, где их взять и как взаимосвязаны vendor и proprietary-files.txt. Уточню, что здесь будет речь не о разделе vendor, а о vendor tree, для краткости я буду писать просто vendor.</p>
+<p>Начнем с конца.</p>
+<h3 id="vendor-и-proprietary-filestxt"><a class="header" href="#vendor-и-proprietary-filestxt">Vendor и proprietary-files.txt</a></h3>
+<p>В деревьях вы могли видеть файлик <strong>proprietary-files.txt</strong>. Если вы его открывали, то видели, что это по факту список того, что лежит в vendor’е. Также подобных файлов может быть несколько. В деревьях устройств на базе процессоров Qualcomm Snapdragon часто можно было встретить <strong>proprietary-files-qc.txt</strong> - это список файлов для common vendor. К примеру, у mido и tissot был common vendor и в их деревьях можно было встретить proprietary-files-qc.txt.</p>
+<p>Здесь я приведу синтаксис данных списков. Позже вы поймете зачем и почему.</p>
+<p><strong>Синтаксис строки выглядит так:</strong></p>
+<pre><code>[-]source[:destination][|sha1sum]
+</code></pre>
+<p><code>-</code>  - если блоб является модулем, и требуется что-то собрать с использованием этого блоба, <a href="https://github.com/LineageOS/android_device_leeco_s2/blob/1c12856e5c8d70e756aa48f91d1ad9066ddd9fd0/audio_amplifier/Android.mk#L26">пример</a></p>
+<p><code>source</code> - из какого места был взят блоб и, если <code>:destination</code> нет, то где будет лежать в готовом вендоре</p>
+<p><code>destination</code> - где будет лежать блоб в готовом vendor’е</p>
+<p><code>sha1sum</code> - sha1 хеш-сумма</p>
+<p>Таким образом, файл <strong>proprietary-files.txt</strong> является списком файлов и библиотек, которые нужно скопировать в директорию vendor при сборке системы. Эти файлы обычно являются частью проприетарного кода или библиотек, которые не могут быть распространены свободно. Они нужны для того, чтобы устройство работало корректно и могло использовать все свои функции.</p>
+<p><a href="https://wiki.lineageos.org/proprietary_blobs">Референс</a></p>
+<h3 id="Дампы"><a class="header" href="#Дампы">Дампы</a></h3>
+<p>Дамп - (dump) - разобранная прошивка на файлы, благодаря чему есть возможность достать любой файл и что-либо с ним сделать. Дампы можно сделать с помощью различных дамперов:</p>
+<ul>
+<li><a href="https://github.com/vm03/payload_dumper">payload_dumper</a>;</li>
+<li><a href="https://github.com/sebaubuntu-python/dumpyara">dumpyara</a>.</li>
+</ul>
+<p>Так же Вы можете найти готовые дампы на просторах интернета. К сожалению, мы не можем предоставить ссылки на репозитории с дампами. Но если поспрашивать сообщество, Вы найдете все необходимое :)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-5-Обновление-и-сборка-ядра"><a class="header" href="#Параграф-5-Обновление-и-сборка-ядра">Параграф 5: Обновление и сборка ядра</a></h1>
+<p>Для обновления ядра, вам нужен хотя бы средний уровень знаний того, как же работает ядро (см. <a href="https://github.com/Roker2/BookAboutBuilding/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%203%20%D0%B8%D0%B7%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%204%20%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%8F%D0%B4%D1%80%D0%BE.md#%D0%BF%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84-4-%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%8F%D0%B4%D1%80%D0%BE">что такое ядро</a>) и в целом Android, а так же умение пользоваться git (см. <a href="https://github.com/Roker2/BookAboutBuilding/blob/master/%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%202%20git%2C%20%D1%81%20%D1%87%D0%B5%D0%BC%20%D0%B5%D0%B3%D0%BE%20%D0%B5%D0%B4%D1%8F%D1%82%20%D0%B8%20%D0%B7%D0%B0%D1%87%D0%B5%D0%BC%20%D0%BE%D0%BD/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%202%20%D0%A5%D0%BE%D0%B4%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B%20git&#x27;%D0%B0.md#%D0%BF%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84-2-%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B-git%D0%B0">ходовые команды git</a>).</p>
+<h2 id="Обновление"><a class="header" href="#Обновление">Обновление</a></h2>
+<h3 id="Подготовка"><a class="header" href="#Подготовка">Подготовка</a></h3>
+<p>Давайте, для начала узнаем какие стабильные версии ядра Android на данный момент (2022 г.) активно обновляются. Вот список для наглядности: <em>4.9, 4.14, 4.19, 5.4, 5.10, 5.15</em>. Должен сразу предупредить, что обновить ядро, предположим, с 4.9 до 4.19 без перебазирования невозможно, более того, обычно производитель делает специфические драйвера устройства только для одной версии и не обновляет дальше, а так же само ядро может не поддерживать ваш чипсет и без углублённых знаний в ядре обновить драйвера у вас не получится. Поэтому, зачастую, маинтейнеры обновляют <strong>sublevel</strong> ядра, это мы и будем делать ниже. Чтобы узнать его, заходим в исходник ядра, которое хотим обновить, в корне находим и открываем файлик <strong>Makefile</strong>, в самом верху (обычно) видим такую картину:</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204%20%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE/images/1.png" alt="1" /></p>
+<blockquote>
+<p><em>Либо просто заходим на своём смартфоне в Настройки &gt; О Телефоне (только если на смартфоне установлено то же ядро, исходники которого вы собираететсь обновить</em>)</p>
+</blockquote>
+<p>Узнали. После этого нужно найти репозиторий общего (common) ядра, с которого и будем обновлять, обычно используют https://android.googlesource.com/kernel/common/, но можно и другие зеркала. Например https://git.codelinaro.org/clo/la/kernel/msm (только для Qualcomm).</p>
+<p>Смотрим в список бранчей и выбираем со своей версией ядра:</p>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204%20%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE/images/2.png" alt="" /></p>
+<p>После чего смотрим на название последнего коммита, должно быть что-то по типу <code>Merge &lt;версия ядра&gt;</code>, если sublevel выше, чем в ваших в исходниках, тогда можно продолжать. Если же нет, то поздравляю, у вас последняя версия</p>
+<h3 id="Скачиваем-репозитории"><a class="header" href="#Скачиваем-репозитории">Скачиваем репозитории</a></h3>
+<p>Для примера, я буду использовать <a href="https://github.com/PixelExperience-Devices/kernel_lenovo_sdm710/tree/81bad83b39681cc137d99a1b613839032dab9184">4.9.268</a> ядро от Lenovo Z5s (jd2019) и обновлю его до <a href="https://github.com/PixelExperience-Devices/kernel_lenovo_sdm710/tree/76e4fbb527d37378bac0a982c3df9551f17dbfe7">4.9.319</a>. Также, для удобства, рекомендую использовать <a href="https://github.com/shiftkey/desktop">GitHub  Desktop</a>, хоть в нём и не присутствует весь функционал.</p>
+<ol>
+<li>
+<p>Для начала нам нужно склонировать исходники своего ядра (описывать как это делать я думаю не нужно), после добавляем репозиторий в GitHub Desktop (опять же, это не обязательно, все действия можно выполнить только через git).</p>
+</li>
+<li>
+<p>Затем, открываем терминал в папке с исходниками вашего ядра и добавляем наш удаленный репозиторий общего ядра командой:</p>
+<pre><code class="language-bash">git remote add common url 
+</code></pre>
+<p><code>common</code> - название, можете использовать любое другое
+<code>url</code> - ссылка на репозиторий</p>
+</li>
+<li>
+<p>Теперь фетчим добавленный репозиторий:</p>
+<pre><code class="language-bash">git fetch common
+</code></pre>
+<blockquote>
+<p><em>Если вам лень или не позволяет интернет скачать весь репозиторий, можете в конце команды добавить название бранча, тогда скачивать будет только его.</em></p>
+</blockquote>
+</li>
+</ol>
+<p>[картинка с списком бранчей]</p>
+<h3 id="Мержим-изменения"><a class="header" href="#Мержим-изменения">Мержим изменения</a></h3>
+<p>Обновлять ядро лучше всего по одному саблевелу - так больший шанс понять в какой версии и коммите проблема, если у вас будут ошибки при сборке, либо в самой системе, я же рисковый и делал сразу по пять (о чём потом пожалел).</p>
+<ol>
+<li>
+<p>Находим нужную нам версию с помощью поиска в разделе тэгов:
+<img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%204%20%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D1%81%D0%B0%D0%BC%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE/images/4.png" alt="4" /></p>
+</li>
+<li>
+<p>Копируем SHA и мержим этот коммит в нашем бранче:</p>
+<pre><code class="language-bash">git merge sha
+</code></pre>
+<blockquote>
+<p>Если никаких конфликтов нет, то можете замержить ещё пару. Но опять же, вы не будете знать на какой версии у вас всё поломалось, так что лучше мержить по одному-два и собирать, если ядро собралось и система запустилась, то переходим к следующим саблевелам.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Фиксим-конфликты"><a class="header" href="#Фиксим-конфликты">Фиксим конфликты</a></h3>
+<p>Здесь всё довольно муторно. Лично я делаю по такой схеме: если появляются конфликты, то открываю GitHub Desktop, с помощью него намного легче найти их, т.к. они все сразу отображаются вместе с поломанными строками. Если конфликт простой, то фикшу вручную, если же ничего не понятно, то захожу в common репо, открываю просмотр файлов во временной точке нужного тэга и ищу этот конфликтный файл там, открываю историю коммитов для него и смотрю как делали там и просто повторяю все изменения в свой файл. Конфликтных файлов может быть очень много, так что наберитесь терпения и не спешите, т.к. одна лишняя строчка или ошибка в тексте и ядро у вас не соберётся, либо не запустится.</p>
+<h2 id="Сборка-ядра"><a class="header" href="#Сборка-ядра">Сборка ядра</a></h2>
+<h3 id="Из-исходников-прошивки"><a class="header" href="#Из-исходников-прошивки">Из исходников прошивки</a></h3>
+<p>Этот способ для тех, кто уже знает как собирать прошивки и т.п. Проходим по обычному сценарию подготовки к сборке прошивки, только вместо команды запуска сборки прошивки (<code>mka bacon</code>, <code>make bacon</code> и др.), пишем <code>mka bootimage</code>.</p>
+<h3 id="Из-папки-ядра"><a class="header" href="#Из-папки-ядра">Из папки ядра</a></h3>
+<ol>
+<li>
+<p>Скачайте исходный код ядра Android и перейдите в папку с ним с помощью команды:</p>
+<pre><code class="language-bash">git clone &lt;url&gt; kernel
+</code></pre>
+<pre><code class="language-bash">cd kernel
+</code></pre>
+</li>
+<li>
+<p>Убедитесь, что у вас установлены необходимые инструменты для сборки ядра, такие как компилятор GCC/Clang, библиотека make, инструменты для работы с архивами (tar, gzip и т.д.) и другие.</p>
+</li>
+<li>
+<p>Выберите конфигурацию ядра, которую хотите собрать:</p>
+<pre><code class="language-bash">make defconfig
+</code></pre>
+<blockquote>
+<p>Эта команда создаст файл конфигурации ядра с набором опций по умолчанию. Конечно же, выбираете свой defconfig</p>
+</blockquote>
+<pre><code class="language-bash">make menuconfig
+</code></pre>
+<blockquote>
+<p>Эта команда откроет интерактивное меню, где вы сможете выбрать нужные опции ядра с помощью стрелочек.</p>
+</blockquote>
+</li>
+<li>
+<p>Запустите сборку ядра с помощью команды:</p>
+<pre><code class="language-bash">make -jN
+</code></pre>
+<blockquote>
+<p>Где N - это количество ядер вашего процессора. Это позволит ускорить сборку, так как она будет выполняться параллельно на разных ядрах.</p>
+</blockquote>
+</li>
+<li>
+<p>После успешной сборки ядро будет доступно в каталоге <code>arch/architecture/boot/</code> (где architecture - это архитектура вашего устройства, например, x86 или arm).</p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-ошибки-сборки-selinux-нехватка-пакетов-ресурсов-и-тд"><a class="header" href="#Параграф-1-ошибки-сборки-selinux-нехватка-пакетов-ресурсов-и-тд">Параграф 1: ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд)</a></h1>
+<h2 id="cписок-частых-ошибок"><a class="header" href="#cписок-частых-ошибок">Cписок частых ошибок:</a></h2>
+<ol>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#ccache">ccache</a></p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#libncurses5">libncurses5</a></p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#Metalava">metalava</a> </p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0">UnicodeDecodeError</a></p>
+</li>
+</ol>
+<h3 id="ccache"><a class="header" href="#ccache">ccache</a></h3>
+<p><code>error: Failed to create directory /home/user/.ccache/tmp: Read -only file system</code></p>
+<blockquote>
+<p>Фикс:</p>
+<ol>
+<li>Создаём папку по пути /mnt/ccache командой:</li>
+</ol>
+<pre><code class="language-bash">sudo mkdir /mnt/ccache
+</code></pre>
+<ol start="2">
+<li>Монтируем cache:</li>
+</ol>
+<pre><code class="language-bash">sudo mount --bind /home/username/.cache /mnt/ccache
+</code></pre>
+<p><em>Вместо “username” вписываете своего юзера! И не ошибитесь в пути, у вас он может быть слегка другим.</em></p>
+<ol start="3">
+<li>После монтирования прописываем команду для сжатия нашего кэша (это опционально, если вы хотите впихнуть больше в мелкий объём как я, то пишем):</li>
+</ol>
+<pre><code class="language-bash">ccache -o compression=true
+</code></pre>
+<ol start="4">
+<li>Делаем стандартный экспорт и т.д.:
+<pre><code class="language-bash">export USE_CCACHE=1
+</code></pre>
+<pre><code class="language-bash">export CCACHE_EXEC=/usr/bin/ccache
+</code></pre>
+<pre><code class="language-bash">export CCACHE_DIR=/mnt/ccache
+</code></pre>
+</li>
+<li>Устанавливаем размер нашего кэша:</li>
+</ol>
+<pre><code class="language-bash">ccache -M 15G -F 0
+</code></pre>
+<p><em>15G - Размер кэша в ГБ</em></p>
+<p>5.1. <strong>Такое решение работает до первой перезагрузки.</strong> Для повторного исправления (после каждого ребута), просто прописываете команду монтирования:</p>
+<pre><code class="language-bash">sudo mount --bind /home/username/.cache /mnt/ccache
+</code></pre>
+<ol start="6">
+<li>Либо добавляем наш ccache в fstab:</li>
+</ol>
+<pre><code class="language-bash">sudo nano /etc/fstab
+</code></pre>
+<p>6.1. И добавляем строку:
+<code>/home/username/ccache /mnt/ccache none defaults,bind,users,noauto 0 0</code></p>
+<ol start="8">
+<li>После чего редактируем файл профиля:</li>
+</ol>
+<pre><code class="language-bash">nano ~/.profile
+</code></pre>
+<p>7.1.  Добавив строку:
+<code>bash mount /mnt/ccache </code></p>
+</blockquote>
+<h3 id="libncurses5"><a class="header" href="#libncurses5">libncurses5</a></h3>
+<p><code>error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</code></p>
+<blockquote>
+<p>Фикс:</p>
+<ul>
+<li>
+<p>Ubuntu</p>
+<pre><code class="language-bash">sudo apt-get install libncurses5
+</code></pre>
+</li>
+<li>
+<p>Arch</p>
+<pre><code class="language-bash">yay ncurses5-compat-libs
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h3 id="metalava"><a class="header" href="#metalava">Metalava</a></h3>
+<p><code>Симптомы: Сборка останавливается с ошибкой об нехватке ОЗУ на этапе сборки Metalava, либо надолго зависает</code></p>
+<blockquote>
+<p>Фикс:</p>
+<p><strong>Android 10</strong> <em>(возможно устарело)</em></p>
+<ol>
+<li>Заходим в папку build/soong:</li>
+</ol>
+<pre><code class="language-bash">cd build/soong
+</code></pre>
+<ol start="2">
+<li>
+<p>Открываем на Lineage OS Gerrit нужный нам <a href="https://review.lineageos.org/c/LineageOS/android_build_soong/+/266411">коммит</a></p>
+</li>
+<li>
+<p>Нажимаем кнопку “<code>DOWNLOAD</code>”</p>
+</li>
+</ol>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/2.png" alt="image-20210528014449000" /></p>
+<ol start="4">
+<li>Напротив варианта “<code>Cherry Pick</code>” нажимаем кнопку копирования</li>
+</ol>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/3.png" alt="image-20210528014553371" /></p>
+<ol start="5">
+<li>
+<p>Копируем в терминал и нажимаем Enter</p>
+</li>
+<li>
+<p>Возвращаемся в корень исходников:</p>
+</li>
+</ol>
+<pre><code class="language-bash">cd ../..
+</code></pre>
+<ol start="7">
+<li>
+<p>Выполняем все подготовительные команды для сборки, но не запускаем</p>
+</li>
+<li>
+<p>Заранее и отдельно собираем по одному компоненту, который требует много ОЗУ:</p>
+</li>
+</ol>
+<pre><code class="language-bash">mka api-stubs-docs &amp;&amp; mka hiddenapi-lists-docs &amp;&amp; mka system-api-stubs-docs &amp;&amp; mka test-api-stubs-docs
+</code></pre>
+<ol start="9">
+<li>Запускаем сборку прошивки</li>
+</ol>
+<p><a href="https://gist.github.com/mikecriggs/d98f2fc3461b23732fabebb020e4c42e">Референс</a></p>
+<p><strong>Android 11-13</strong></p>
+<p>Для него все тоже самое, отличие только в <a href="https://github.com/verNANDo57/android_build_soong/commit/ffc8846a01fcfc20d6cf8ca701ef73d99f15acad">коммите</a> и какие компоненты собираем заранее.</p>
+<pre><code class="language-bash">mka api-stubs-docs &amp;&amp; mka module-lib-api-stubs-docs &amp;&amp; mka system-api-stubs-docs &amp;&amp; mka test-api-stubs-docs
+</code></pre>
+<p><a href="https://gist.github.com/verNANDo57/d76bb6e6e4b887101cf5a1cf64c66cef">Референс</a></p>
+</blockquote>
+<h3 id="unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0"><a class="header" href="#unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0">UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xd0</a></h3>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/1.png" alt="image-20210218203603071" /></p>
+<blockquote>
+<p>Фикс:</p>
+<p>​	Убрать русские буквы в пути. Не должно быть по типу /home/coolgirl/прошивочка/…</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Параграф-1-ошибки-сборки-selinux-нехватка-пакетов-ресурсов-и-тд-1"><a class="header" href="#Параграф-1-ошибки-сборки-selinux-нехватка-пакетов-ресурсов-и-тд-1">Параграф 1: ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд)</a></h1>
+<h2 id="cписок-частых-ошибок-1"><a class="header" href="#cписок-частых-ошибок-1">Cписок частых ошибок:</a></h2>
+<ol>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#ccache">ccache</a></p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#libncurses5">libncurses5</a></p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#Metalava">metalava</a> </p>
+</li>
+<li>
+<p><a href="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/%D0%9F%D0%B0%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D1%84%201%20%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8%20%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B8%20(SELinux,%20%D0%BD%D0%B5%D1%85%D0%B2%D0%B0%D1%82%D0%BA%D0%B0%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%B2,%20%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2%20%D0%B8%20%D1%82%D0%B4).html#unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0">UnicodeDecodeError</a></p>
+</li>
+</ol>
+<h3 id="ccache-1"><a class="header" href="#ccache-1">ccache</a></h3>
+<p><code>error: Failed to create directory /home/user/.ccache/tmp: Read -only file system</code></p>
+<blockquote>
+<p>Фикс:</p>
+<ol>
+<li>Создаём папку по пути /mnt/ccache командой:</li>
+</ol>
+<pre><code class="language-bash">sudo mkdir /mnt/ccache
+</code></pre>
+<ol start="2">
+<li>Монтируем cache:</li>
+</ol>
+<pre><code class="language-bash">sudo mount --bind /home/username/.cache /mnt/ccache
+</code></pre>
+<p><em>Вместо “username” вписываете своего юзера! И не ошибитесь в пути, у вас он может быть слегка другим.</em></p>
+<ol start="3">
+<li>После монтирования прописываем команду для сжатия нашего кэша (это опционально, если вы хотите впихнуть больше в мелкий объём как я, то пишем):</li>
+</ol>
+<pre><code class="language-bash">ccache -o compression=true
+</code></pre>
+<ol start="4">
+<li>Делаем стандартный экспорт и т.д.:
+<pre><code class="language-bash">export USE_CCACHE=1
+</code></pre>
+<pre><code class="language-bash">export CCACHE_EXEC=/usr/bin/ccache
+</code></pre>
+<pre><code class="language-bash">export CCACHE_DIR=/mnt/ccache
+</code></pre>
+</li>
+<li>Устанавливаем размер нашего кэша:</li>
+</ol>
+<pre><code class="language-bash">ccache -M 15G -F 0
+</code></pre>
+<p><em>15G - Размер кэша в ГБ</em></p>
+<p>5.1. <strong>Такое решение работает до первой перезагрузки.</strong> Для повторного исправления (после каждого ребута), просто прописываете команду монтирования:</p>
+<pre><code class="language-bash">sudo mount --bind /home/username/.cache /mnt/ccache
+</code></pre>
+<ol start="6">
+<li>Либо добавляем наш ccache в fstab:</li>
+</ol>
+<pre><code class="language-bash">sudo nano /etc/fstab
+</code></pre>
+<p>6.1. И добавляем строку:
+<code>/home/username/ccache /mnt/ccache none defaults,bind,users,noauto 0 0</code></p>
+<ol start="8">
+<li>После чего редактируем файл профиля:</li>
+</ol>
+<pre><code class="language-bash">nano ~/.profile
+</code></pre>
+<p>7.1.  Добавив строку:
+<code>bash mount /mnt/ccache </code></p>
+</blockquote>
+<h3 id="libncurses5-1"><a class="header" href="#libncurses5-1">libncurses5</a></h3>
+<p><code>error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</code></p>
+<blockquote>
+<p>Фикс:</p>
+<ul>
+<li>
+<p>Ubuntu</p>
+<pre><code class="language-bash">sudo apt-get install libncurses5
+</code></pre>
+</li>
+<li>
+<p>Arch</p>
+<pre><code class="language-bash">yay ncurses5-compat-libs
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h3 id="metalava-1"><a class="header" href="#metalava-1">Metalava</a></h3>
+<p><code>Симптомы: Сборка останавливается с ошибкой об нехватке ОЗУ на этапе сборки Metalava, либо надолго зависает</code></p>
+<blockquote>
+<p>Фикс:</p>
+<p><strong>Android 10</strong> <em>(возможно устарело)</em></p>
+<ol>
+<li>Заходим в папку build/soong:</li>
+</ol>
+<pre><code class="language-bash">cd build/soong
+</code></pre>
+<ol start="2">
+<li>
+<p>Открываем на Lineage OS Gerrit нужный нам <a href="https://review.lineageos.org/c/LineageOS/android_build_soong/+/266411">коммит</a></p>
+</li>
+<li>
+<p>Нажимаем кнопку “<code>DOWNLOAD</code>”</p>
+</li>
+</ol>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/2.png" alt="image-20210528014449000" /></p>
+<ol start="4">
+<li>Напротив варианта “<code>Cherry Pick</code>” нажимаем кнопку копирования</li>
+</ol>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/3.png" alt="image-20210528014553371" /></p>
+<ol start="5">
+<li>
+<p>Копируем в терминал и нажимаем Enter</p>
+</li>
+<li>
+<p>Возвращаемся в корень исходников:</p>
+</li>
+</ol>
+<pre><code class="language-bash">cd ../..
+</code></pre>
+<ol start="7">
+<li>
+<p>Выполняем все подготовительные команды для сборки, но не запускаем</p>
+</li>
+<li>
+<p>Заранее и отдельно собираем по одному компоненту, который требует много ОЗУ:</p>
+</li>
+</ol>
+<pre><code class="language-bash">mka api-stubs-docs &amp;&amp; mka hiddenapi-lists-docs &amp;&amp; mka system-api-stubs-docs &amp;&amp; mka test-api-stubs-docs
+</code></pre>
+<ol start="9">
+<li>Запускаем сборку прошивки</li>
+</ol>
+<p><a href="https://gist.github.com/mikecriggs/d98f2fc3461b23732fabebb020e4c42e">Референс</a></p>
+<p><strong>Android 11-13</strong></p>
+<p>Для него все тоже самое, отличие только в <a href="https://github.com/verNANDo57/android_build_soong/commit/ffc8846a01fcfc20d6cf8ca701ef73d99f15acad">коммите</a> и какие компоненты собираем заранее.</p>
+<pre><code class="language-bash">mka api-stubs-docs &amp;&amp; mka module-lib-api-stubs-docs &amp;&amp; mka system-api-stubs-docs &amp;&amp; mka test-api-stubs-docs
+</code></pre>
+<p><a href="https://gist.github.com/verNANDo57/d76bb6e6e4b887101cf5a1cf64c66cef">Референс</a></p>
+</blockquote>
+<h3 id="unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0-1"><a class="header" href="#unicodedecodeerror-ascii-codec-cant-decode-byte-0xd0-1">UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xd0</a></h3>
+<p><img src="%D0%93%D0%BB%D0%B0%D0%B2%D0%B0%205%20%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B9%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D1%88%D0%B5%D0%BB%20%D0%B2%20%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%83%D1%8E%20%D1%87%D0%B0%D1%81%D1%82%D1%8C/images/1.png" alt="image-20210218203603071" /></p>
+<blockquote>
+<p>Фикс:</p>
+<p>​	Убрать русские буквы в пути. Не должно быть по типу /home/coolgirl/прошивочка/…</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="Список-полезных-утилит-и-приложений"><a class="header" href="#Список-полезных-утилит-и-приложений">Список полезных утилит и приложений</a></h1>
+<ul>
+<li>
+<p><a href="https://github.com/shiftkey/desktop">GitHub Desktop</a> - GUI клиент GitHub для быстрого редактирования репозитория, отсутствуют некоторые важные функции, поэтому работать с консолью все равно придётся</p>
+</li>
+<li>
+<p><a href="https://www.gitkraken.com/">GitKraken</a> - GUI git клиент</p>
+</li>
+<li>
+<p>Midnight Commander - консольный файловый менеджер, пакет <code>mc</code></p>
+</li>
+<li>
+<p><a href="https://meld.app/">Meld</a> - программа для сравнения файлов, пакет <code>meld</code></p>
+</li>
+<li>
+<p>nano - консольный текстовый редактор</p>
+</li>
+<li>
+<p>sed - потоковый текстовый редактор</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>

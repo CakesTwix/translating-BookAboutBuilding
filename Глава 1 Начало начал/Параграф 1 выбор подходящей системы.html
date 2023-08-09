@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Параграф 1 выбор подходящей системы - About Android Building</title>
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/language-picker.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/css/language-picker.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Введение.html">Введение</a></li><li class="chapter-item expanded "><a href="../Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html" class="active"><strong aria-hidden="true">1.</strong> Глава 1 Начало начал</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html" class="active"><strong aria-hidden="true">1.1.</strong> Параграф 1 выбор подходящей системы</a></li><li class="chapter-item "><a href="../Глава 1 Начало начал/Параграф 2 установка системы и настройка её среды.html"><strong aria-hidden="true">1.2.</strong> Параграф 2 установка системы и настройка её среды</a></li><li class="chapter-item "><a href="../Глава 1 Начало начал/Параграф 3 качаем исходники прошивки.html"><strong aria-hidden="true">1.3.</strong> Параграф 3 качаем исходники прошивки</a></li><li class="chapter-item "><a href="../Глава 1 Начало начал/Параграф 4 исходники устройства.html"><strong aria-hidden="true">1.4.</strong> Параграф 4 исходники устройства</a></li><li class="chapter-item "><a href="../Глава 1 Начало начал/Параграф 5 инициализация и сборка.html"><strong aria-hidden="true">1.5.</strong> Параграф 5 инициализация и сборка</a></li><li class="chapter-item "><a href="../Глава 1 Начало начал/Параграф 6 в завершение.html"><strong aria-hidden="true">1.6.</strong> Параграф 6 в завершение</a></li></ol></li><li class="chapter-item expanded "><a href="../Глава 2 git, с чем его едят и зачем он/Введение.html"><strong aria-hidden="true">2.</strong> Глава 2 git, с чем его едят и зачем он</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Глава 2 git, с чем его едят и зачем он/Параграф 1 Создание аккаунта на GitHub и настройка git под свой аккаунт.html"><strong aria-hidden="true">2.1.</strong> Параграф 1 Создание аккаунта на GitHub и настройка git под свой аккаунт</a></li><li class="chapter-item "><a href="../Глава 2 git, с чем его едят и зачем он/Параграф 2 Ходовые команды git'а.html"><strong aria-hidden="true">2.2.</strong> Параграф 2 Ходовые команды git'а</a></li></ol></li><li class="chapter-item expanded "><a href="../Глава 3 изучение исходников устройства/Введение.html"><strong aria-hidden="true">3.</strong> Глава 3 изучение исходников устройства</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Глава 3 изучение исходников устройства/Параграф 1 что есть что и для чего.html"><strong aria-hidden="true">3.1.</strong> Параграф 1 что есть что и для чего</a></li><li class="chapter-item "><a href="../Глава 3 изучение исходников устройства/Параграф 2 что такое дерево и сколько их должно быть.html"><strong aria-hidden="true">3.2.</strong> Параграф 2 что такое дерево и сколько их должно быть</a></li><li class="chapter-item "><a href="../Глава 3 изучение исходников устройства/Параграф 3 Что такое vendor и почему он имеет чужие библиотеки.html"><strong aria-hidden="true">3.3.</strong> Параграф 3 Что такое vendor и почему он имеет чужие библиотеки</a></li><li class="chapter-item "><a href="../Глава 3 изучение исходников устройства/Параграф 4 Что такое ядро.html"><strong aria-hidden="true">3.4.</strong> Параграф 4 Что такое ядро</a></li><li class="chapter-item "><a href="../Глава 3 изучение исходников устройства/Параграф 5 Адаптация исходников устройства.html"><strong aria-hidden="true">3.5.</strong> Параграф 5 Адаптация исходников устройства</a></li></ol></li><li class="chapter-item expanded "><a href="../Глава 4 Обновление исходников самостоятельно/Введение.html"><strong aria-hidden="true">4.</strong> Глава 4 Обновление исходников самостоятельно</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Глава 4 Обновление исходников самостоятельно/Параграф 1 Дампы, vendor и proprietary-files.txt.html"><strong aria-hidden="true">4.1.</strong> Параграф 1 Дампы, vendor и proprietary-files.txt</a></li><li class="chapter-item "><a href="../Глава 4 Обновление исходников самостоятельно/Параграф 5 Обновление и сборка ядра.html"><strong aria-hidden="true">4.2.</strong> Параграф 5 Обновление и сборка ядра</a></li></ol></li><li class="chapter-item expanded "><a href="../Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд).html"><strong aria-hidden="true">5.</strong> Глава 5 дополнительный материал, который не вошел в основную часть</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд).html"><strong aria-hidden="true">5.1.</strong> Параграф 1 ошибки сборки (SELinux, нехватка пакетов, ресурсов и тд)</a></li><li class="chapter-item "><a href="../Глава 5 дополнительный материал, который не вошел в основную часть/Параграф 5 список полезных утилит и приложений.html"><strong aria-hidden="true">5.2.</strong> Параграф 5 список полезных утилит и приложений</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">About Android Building</h1>
+
+                    <div class="right-buttons">
+                        <button id="language-toggle" class="icon-button" type="button"
+                                title="Change language" aria-label="Change language"
+                                aria-haspopup="true" aria-expanded="false"
+                                aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="ru">Russian</a>
+                          </button></li>
+                          <li role="none"><button role="menuitem" class="theme">
+                              <a id="uk">Ukrainian</a>
+                          </button></li>
+                        </ul>
+
+                        <script>
+                          let langToggle = document.getElementById("language-toggle");
+                          let langList = document.getElementById("language-list");
+                          langToggle.addEventListener("click", (event) => {
+                              langList.style.display = langList.style.display == "block" ? "none" : "block";
+                          });
+                          let selectedLang = document.getElementById("ru");
+                          selectedLang.parentNode.classList.add("theme-selected");
+                          // The path to the root, taking the current
+                          // language into account.
+                          let full_path_to_root = "../";
+                          console.log("ru")
+                          // The page path (mdbook only gives us
+                          // access to the path to the Markdown file).
+                          let path = "Глава 1 Начало начал/Параграф 1 выбор подходящей системы.md".replace(/\.md$/, ".html");
+                          for (let lang of langList.querySelectorAll("a")) {
+                              if (lang.id == "ru") {
+                                  lang.href = `${full_path_to_root}${path}`;
+                              } else {
+                                  lang.href = `${full_path_to_root}${lang.id}/${path}`;
+                              }
+                          }
+                        </script>
+
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Roker2/BookAboutBuilding" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Параграф-1-выбор-подходящей-системы"><a class="header" href="#Параграф-1-выбор-подходящей-системы">Параграф 1: выбор подходящей системы</a></h1>
+<p>Людям, которые знают операционные системы Linux, этот параграф можно пропустить, так как, думаю, вы и без меня все знаете.</p>
+<h3 id="Что-такое-linux-и-с-чем-его-едят"><a class="header" href="#Что-такое-linux-и-с-чем-его-едят">Что такое Linux, и с чем его едят</a></h3>
+<p>Linux - это ОС с открытым исходным кодом, разрабатываемая сообществом программистовю. Ядро Linux разрабатывается независимо, а сами дистрибутивы (например, Ubuntu, Fedora, Debian) создаются на его основе и дополняются дополнительными программами и утилитами. В данной статье рассматривается выбор дистрибутива для сборки прошивки.</p>
+<h4 id="Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows"><a class="header" href="#Почему-же-нельзя-заниматься-этим-на-всем-привычной-ОС-windows">Почему же нельзя заниматься этим на всем привычной ОС, Windows?</a></h4>
+<p>Ну, сборка на Linux считается более предпочтительной как минимум потому что многих утилит нет на Windows, а те которые есть, поставляются в крайне неудобной форме: архивы, установщики и т. д.  Однако есть возможность делать это на Windows при помощи виртуальных машин, или же WSL на Windows 10.</p>
+<p><strong>WSL</strong> - Windows Subsystem for Linux - Фича в Windows 10/11, позволяющая запускать Linux контейнеры прямо в Windows. Эти контейнеры можно установить из магазина приложений (Microsoft Store). Но почти все разработчики предпочитают нативный Linux, т. к. WSL может быть менее стабильным.</p>
+<h3 id="Ну-что-ж-приступим"><a class="header" href="#Ну-что-ж-приступим">Ну что ж, приступим?</a></h3>
+<p>Хорошо, если вы уже решились познать новую ОС, и начать все таки собирать прошивки (и не только), то начнем выбирать дистрибутив для вас.</p>
+<p>Большинство дистрибутивов разделяются на 2 лагеря:</p>
+<ul>
+<li>Debian-like</li>
+<li>Arch-like</li>
+</ul>
+<p>Как следует из названия, основой для всех Debian-like дистрибутивов является дистрибутив Debian, а основой Arch-like - Arch Linux</p>
+<p>Основное различие - система управления пакетами, или <strong>пакетный менеджер</strong>. С этим всем мы познакомимся в следующем параграфе. </p>
+<p>А пока, чтобы не грузить вас ненужной информацией, скажу: Debian-like системы подходят для новичков, легко освоить, шанс убить систему своими руками гораздо ниже, чем у второго лагеря, Arch-like же подходят для уже освоившихся пользователей, более сложны в настройке.</p>
+<h4 id="Самые-популярные-debian-like-системы"><a class="header" href="#Самые-популярные-debian-like-системы">Самые популярные Debian-like системы</a></h4>
+<ul>
+<li>Ubuntu (https://ubuntu.com/)</li>
+<li>Собственно, Debian (https://www.debian.org/index.ru.html)</li>
+<li>Linux Mint (Основан на Ubuntu) (https://linuxmint.com/)</li>
+</ul>
+<p>Все используют Ubuntu и вам советую. Хорошая ОС для как начала, так и для повседневного использования. От себя добавлю, что начинать нужно именно с нее, так как проста в установке, настройке, после установки можно сразу работать. Также советую Linux Mint, это та же Ubuntu, только немного с другим набором программ и в фирменной оболочке Cinnamon, которая более привычна для Windows-юзера.</p>
+<h4 id="Самые-популярные-arch-like-системы"><a class="header" href="#Самые-популярные-arch-like-системы">Самые популярные Arch-like системы</a></h4>
+<ul>
+<li>Manjaro (https://manjaro.org/)</li>
+<li>Arch Linux (https://www.archlinux.org/)</li>
+</ul>
+<p>Тут все немного не однозначно. С одной стороны, эти системы кушают меньше ОЗУ чем Debian-like, с другой стороны если ставить, то ставить Manjaro. Почему? Да потому что установка чистого Arch Linux очень, очень сложная, тем более для новичков, т. к. проводится почти полностью в ручную. Представьте ситуацию, вам дают загрузочную флешку с дистрибутивом, вы загружаетесь с нее и видите консоль с набором утилит. Все, дальше вы сами, по мануалу. Сложно, не правда-ли? А Manjaro это тот же Arch Linux со своими репозиториями и тоже прост в установке, и можно сразу работать после установки, но требует немного большей “допилки напильником” после установки. Также в Arch Linux (а соответственно и в Manjaro) существует такая прекрасная штука как AUR - репозиторий с исходными кодами пакетов. Там можно найти почти все, чего нет в обычных репозиториях.</p>
+<h3 id="Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать"><a class="header" href="#Хорошо-я-выбрал-дистрибутив-Но-тут-есть-различные-версии-с-различными-оболочками-что-выбрать">Хорошо, я выбрал дистрибутив. Но тут есть различные версии с различными “оболочками”, что выбрать?</a></h3>
+<p>Тут все чисто по вкусу. В каждой из оболочек есть что-то свое, какие-то легковесные, какие-то красивые. Вот список основных из них:</p>
+<ul>
+<li>Gnome (начиная с Ubuntu 18.04 используется вместо фирменной оболочки Unity)</li>
+<li>KDE Plasma (пожалуй, самая красивая и кастомизируемая оболочка)</li>
+<li>Cinnamon (фирменная оболочка Linux Mint)</li>
+<li>XFCE (достаточно легковесная, по умолчанию не очень красивая, но это решается установкой темы)</li>
+<li>LXQt (еще более легковесна, по умолчанию красивее XFCE, корни растут из LXDE)</li>
+<li>LXDE (пожалуй самая легковесная оболочка из популярных. Не красиво)</li>
+<li>Unity (когда-то крутая оболочка, но скажем спасибо Canonical, что прекратили ее развитие)</li>
+</ul>
+<h3 id="Вывод"><a class="header" href="#Вывод">Вывод</a></h3>
+<p>Для новичков, или вы хотите поставить, настроить и забыть, лишь обновляя пакеты, ставим только Ubuntu или что-либо на ее основе (напр. Linux Mint). Если же вы уже прошаренный, то советую попробовать Arch-like. Установку и настройку рассмотрим в следующем параграфе.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Введение.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Введение.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Глава 1 Начало начал/Параграф 1 выбор подходящей системы.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
